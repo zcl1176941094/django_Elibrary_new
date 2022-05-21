@@ -88,7 +88,7 @@ class BookReportSerializer(serializers.Serializer):
     range = serializers.CharField(max_length=20, label="书籍违规页范围")
     isdealt = serializers.BooleanField(default=False, label="是否处理")
     adminstrate = serializers.IntegerField(label="处理人",required=False)
-
+    result = serializers.IntegerField(default=0, label="处理结果")
 
     def create(self, validated_data):
         report = ReportInfo(**validated_data)

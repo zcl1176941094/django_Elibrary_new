@@ -11,7 +11,9 @@ urlpatterns = [
     path('daily_book/', views.DailyRecommendView.as_view()),  # 获取每日推荐书籍
     re_path('report/(?P<pk>[^/.]+)/', views.BookReportView.as_view()),  # 提交书籍举报信息
     path('search_undo_msg/', views.UndoBookReportView.as_view()),  # 获取未处理信息
+    re_path('manage_report/(?P<pk>[^/.]+)/', views.UndoBookReportView.as_view()),  # 处理举报信息
     path('search_msg/', views.DoneBookReportView.as_view()),  # 获取已处理信息
+
 ]
 
 # 获取书籍信息

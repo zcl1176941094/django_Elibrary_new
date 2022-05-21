@@ -8800,3 +8800,49 @@ INFO 2022-05-21 21:34:35,218 autoreload 251 D:\django project\Elibrary\apps\user
 INFO 2022-05-21 21:34:36,004 autoreload 637 Watching for file changes with StatReloader
 INFO 2022-05-21 21:35:10,490 autoreload 251 D:\django project\Elibrary\apps\user\models.py changed, reloading.
 INFO 2022-05-21 21:35:11,317 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-05-21 21:38:38,147 autoreload 251 D:\django project\Elibrary\apps\user\models.py changed, reloading.
+INFO 2022-05-21 21:38:38,983 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-05-21 21:39:18,658 autoreload 251 D:\django project\Elibrary\apps\books\serializers.py changed, reloading.
+INFO 2022-05-21 21:39:19,644 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-05-21 21:40:08,409 autoreload 251 D:\django project\Elibrary\apps\books\serializers.py changed, reloading.
+INFO 2022-05-21 21:40:09,298 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-05-21 21:40:21,233 autoreload 637 Watching for file changes with StatReloader
+WARNING 2022-05-21 21:40:22,885 log 224 Method Not Allowed: /report/1/
+WARNING 2022-05-21 21:40:22,886 basehttp 161 "GET /report/1/ HTTP/1.1" 405 40
+INFO 2022-05-21 21:40:26,820 basehttp 161 "POST /report/1/ HTTP/1.1" 200 216
+INFO 2022-05-21 21:41:24,801 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-05-21 21:41:33,687 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-05-21 21:42:07,943 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-05-21 21:42:09,669 basehttp 161 "POST /report/1/ HTTP/1.1" 200 218
+INFO 2022-05-21 21:42:41,441 autoreload 251 D:\django project\Elibrary\apps\user\models.py changed, reloading.
+INFO 2022-05-21 21:42:42,304 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-05-21 21:43:08,498 autoreload 251 D:\django project\Elibrary\apps\user\models.py changed, reloading.
+INFO 2022-05-21 21:43:09,357 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-05-21 21:43:19,924 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-05-21 21:43:21,572 basehttp 161 "POST /report/1/ HTTP/1.1" 200 218
+INFO 2022-05-21 21:43:39,921 autoreload 251 D:\django project\Elibrary\apps\books\serializers.py changed, reloading.
+INFO 2022-05-21 21:43:40,888 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-05-21 21:44:03,319 basehttp 161 "POST /report/1/ HTTP/1.1" 200 216
+INFO 2022-05-21 21:48:31,479 autoreload 251 D:\django project\Elibrary\apps\books\views.py changed, reloading.
+INFO 2022-05-21 21:48:32,376 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-05-21 21:48:42,927 autoreload 251 D:\django project\Elibrary\apps\books\urls.py changed, reloading.
+INFO 2022-05-21 21:48:43,793 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-05-21 21:49:41,722 autoreload 251 D:\django project\Elibrary\apps\books\urls.py changed, reloading.
+INFO 2022-05-21 21:49:42,649 autoreload 637 Watching for file changes with StatReloader
+WARNING 2022-05-21 21:50:11,141 log 224 Bad Request: /manage_report/3/
+WARNING 2022-05-21 21:50:11,141 basehttp 161 "POST /manage_report/3/ HTTP/1.1" 400 75
+INFO 2022-05-21 21:51:18,213 autoreload 637 Watching for file changes with StatReloader
+WARNING 2022-05-21 21:51:19,268 log 224 Bad Request: /manage_report/3/
+WARNING 2022-05-21 21:51:19,268 basehttp 161 "POST /manage_report/3/ HTTP/1.1" 400 75
+INFO 2022-05-21 21:52:05,515 autoreload 637 Watching for file changes with StatReloader
+WARNING 2022-05-21 21:52:05,994 log 224 Bad Request: /manage_report/3/
+WARNING 2022-05-21 21:52:05,995 basehttp 161 "POST /manage_report/3/ HTTP/1.1" 400 75
+WARNING 2022-05-21 21:52:09,564 log 224 Bad Request: /manage_report/3/
+WARNING 2022-05-21 21:52:09,564 basehttp 161 "POST /manage_report/3/ HTTP/1.1" 400 75
+INFO 2022-05-21 21:52:22,355 autoreload 251 D:\django project\Elibrary\apps\books\views.py changed, reloading.
+INFO 2022-05-21 21:52:23,206 autoreload 637 Watching for file changes with StatReloader
+WARNING 2022-05-21 21:53:34,617 log 224 Bad Request: /manage_report/3/
+WARNING 2022-05-21 21:53:34,617 basehttp 161 "POST /manage_report/3/ HTTP/1.1" 400 75
+INFO 2022-05-21 21:54:00,286 autoreload 637 Watching for file changes with StatReloader
+WARNING 2022-05-21 21:54:03,611 log 224 Bad Request: /manage_report/3/
+WARNING 2022-05-21 21:54:03,611 basehttp 161 "POST /manage_report/3/ HTTP/1.1" 400 75

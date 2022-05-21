@@ -146,7 +146,7 @@ class ReportInfo(models.Model):
     details = models.TextField()
     range = models.CharField(max_length=20, verbose_name="书籍违规页范围")
     isdealt = models.BooleanField(default=False, verbose_name="是否处理")
-    adminstrate = models.ForeignKey(UserInfo, on_delete=models.CASCADE, db_column="adminstrate", verbose_name="处理人")
+    adminstrate = models.ForeignKey(UserInfo, on_delete=models.CASCADE, db_column="adminstrate", verbose_name="处理人",null=True)
     result = models.IntegerField(choices=choices, default=0, verbose_name="处理结果")
 
     class Meta:

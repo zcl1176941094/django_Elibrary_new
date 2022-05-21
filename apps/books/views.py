@@ -215,22 +215,32 @@ class BookReportView(APIView):
 # 查询未处理书籍举报
 class UndoBookReportView(APIView):
     # 查询未处理信息
-    def get(self,request):
+    def get(self, request):
         reports = ReportInfo.objects.filter(isdealt=False)
         list = []
         for i in reports:
             list.append(BookReportSerializer(i).data)
-        list = sorted(list,key=lambda x:x["Reporttime"])
+        list = sorted(list, key=lambda x: x["Reporttime"])
         return Response(list)
+
+    # 处理举报信息
+    def post(self, request, pk=None):
+
+        result = request.data["result"]
+        print(ReportInfo.objects.get(reportid=pk))
+        ReportInfo.objects.filter(reportid=pk).update(isdealt=True,result=result)
+
+        return Response({'msg':'处理成功！'})
+
 
 # 查询已处理书籍举报
 class DoneBookReportView(APIView):
     # 查询已处理信息
-    def get(self,request):
+    def get(self, request):
         reports = ReportInfo.objects.filter(isdealt=True)
         list = []
         for i in reports:
             list.append(BookReportSerializer(i).data)
-        list = sorted(list,key=lambda x:x["Reporttime"])
+        list = sorted(list, key=lambda x: x["Reporttime"])
         list.reverse()
         return Response(list)
