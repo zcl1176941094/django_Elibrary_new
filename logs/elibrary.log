@@ -8374,3 +8374,429 @@ INFO 2022-05-19 11:17:07,566 autoreload 637 Watching for file changes with StatR
 INFO 2022-05-19 11:17:09,681 basehttp 161 "GET /daily_book/ HTTP/1.1" 200 1045
 INFO 2022-05-19 11:17:57,918 autoreload 251 D:\zcl\Project\Elibrary\apps\books\views.py changed, reloading.
 INFO 2022-05-19 11:17:58,833 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-05-21 20:22:27,976 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-05-21 20:23:39,988 autoreload 251 D:\django project\Elibrary\apps\books\serializers.py changed, reloading.
+INFO 2022-05-21 20:23:40,882 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-05-21 20:28:22,692 autoreload 251 D:\django project\Elibrary\apps\books\serializers.py changed, reloading.
+INFO 2022-05-21 20:28:23,566 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-05-21 20:29:54,061 autoreload 251 D:\django project\Elibrary\apps\books\serializers.py changed, reloading.
+INFO 2022-05-21 20:29:54,932 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-05-21 20:34:55,862 autoreload 251 D:\django project\Elibrary\apps\user\models.py changed, reloading.
+INFO 2022-05-21 20:34:56,732 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-05-21 20:46:28,648 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-05-21 20:46:59,566 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-05-21 20:47:36,804 basehttp 161 "POST /register/ HTTP/1.1" 201 245
+ERROR 2022-05-21 20:49:02,045 log 224 Internal Server Error: /report/2/
+Traceback (most recent call last):
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\django project\Elibrary\apps\books\views.py", line 201, in post
+    data["fid"] = file
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\http\request.py", line 513, in __setitem__
+    self._assert_mutable()
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\http\request.py", line 510, in _assert_mutable
+    raise AttributeError("This QueryDict instance is immutable")
+AttributeError: This QueryDict instance is immutable
+ERROR 2022-05-21 20:49:02,046 basehttp 161 "POST /report/2/ HTTP/1.1" 500 100580
+INFO 2022-05-21 20:52:21,679 autoreload 637 Watching for file changes with StatReloader
+ERROR 2022-05-21 20:52:23,260 log 224 Internal Server Error: /report/2/
+Traceback (most recent call last):
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\django project\Elibrary\apps\books\views.py", line 203, in post
+    data["fid"] = file
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\http\request.py", line 513, in __setitem__
+    self._assert_mutable()
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\http\request.py", line 510, in _assert_mutable
+    raise AttributeError("This QueryDict instance is immutable")
+AttributeError: This QueryDict instance is immutable
+ERROR 2022-05-21 20:52:23,260 basehttp 161 "POST /report/2/ HTTP/1.1" 500 100556
+INFO 2022-05-21 20:52:50,608 autoreload 637 Watching for file changes with StatReloader
+ERROR 2022-05-21 20:52:52,094 log 224 Internal Server Error: /report/2/
+Traceback (most recent call last):
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\django project\Elibrary\apps\books\views.py", line 201, in post
+    data["fid"] = file
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\http\request.py", line 513, in __setitem__
+    self._assert_mutable()
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\http\request.py", line 510, in _assert_mutable
+    raise AttributeError("This QueryDict instance is immutable")
+AttributeError: This QueryDict instance is immutable
+ERROR 2022-05-21 20:52:52,095 basehttp 161 "POST /report/2/ HTTP/1.1" 500 100570
+INFO 2022-05-21 20:54:06,700 autoreload 637 Watching for file changes with StatReloader
+ERROR 2022-05-21 20:54:10,512 log 224 Internal Server Error: /report/2/
+Traceback (most recent call last):
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\django project\Elibrary\apps\books\views.py", line 201, in post
+    data["fid"] = file
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\http\request.py", line 513, in __setitem__
+    self._assert_mutable()
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\http\request.py", line 510, in _assert_mutable
+    raise AttributeError("This QueryDict instance is immutable")
+AttributeError: This QueryDict instance is immutable
+ERROR 2022-05-21 20:54:10,514 basehttp 161 "POST /report/2/ HTTP/1.1" 500 100600
+INFO 2022-05-21 20:54:52,784 autoreload 637 Watching for file changes with StatReloader
+ERROR 2022-05-21 20:54:55,004 log 224 Internal Server Error: /report/2/
+Traceback (most recent call last):
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\django project\Elibrary\apps\books\views.py", line 201, in post
+    data["fid"] = file.fid
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\http\request.py", line 513, in __setitem__
+    self._assert_mutable()
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\http\request.py", line 510, in _assert_mutable
+    raise AttributeError("This QueryDict instance is immutable")
+AttributeError: This QueryDict instance is immutable
+ERROR 2022-05-21 20:54:55,005 basehttp 161 "POST /report/2/ HTTP/1.1" 500 100572
+INFO 2022-05-21 20:55:05,642 autoreload 251 D:\django project\Elibrary\apps\books\views.py changed, reloading.
+INFO 2022-05-21 20:55:06,519 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-05-21 20:55:30,850 autoreload 251 D:\django project\Elibrary\apps\books\views.py changed, reloading.
+INFO 2022-05-21 20:55:31,746 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-05-21 20:55:34,406 autoreload 637 Watching for file changes with StatReloader
+WARNING 2022-05-21 20:55:35,943 log 224 Bad Request: /report/2/
+WARNING 2022-05-21 20:55:35,944 basehttp 161 "POST /report/2/ HTTP/1.1" 400 146
+INFO 2022-05-21 20:57:03,599 autoreload 637 Watching for file changes with StatReloader
+WARNING 2022-05-21 20:57:04,684 log 224 Bad Request: /report/2/
+WARNING 2022-05-21 20:57:04,684 basehttp 161 "POST /report/2/ HTTP/1.1" 400 104
+INFO 2022-05-21 20:58:43,405 autoreload 637 Watching for file changes with StatReloader
+WARNING 2022-05-21 20:58:44,306 log 224 Bad Request: /report/2/
+WARNING 2022-05-21 20:58:44,306 basehttp 161 "POST /report/2/ HTTP/1.1" 400 65
+INFO 2022-05-21 20:59:00,219 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-05-21 20:59:01,840 basehttp 161 "POST /report/2/ HTTP/1.1" 200 186
+INFO 2022-05-21 20:59:37,704 autoreload 251 D:\django project\Elibrary\apps\books\serializers.py changed, reloading.
+INFO 2022-05-21 20:59:38,534 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-05-21 21:00:16,602 autoreload 637 Watching for file changes with StatReloader
+WARNING 2022-05-21 21:00:18,800 log 224 Bad Request: /report/2/
+WARNING 2022-05-21 21:00:18,800 basehttp 161 "POST /report/2/ HTTP/1.1" 400 43
+INFO 2022-05-21 21:01:02,344 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-05-21 21:01:03,611 basehttp 161 "POST /report/2/ HTTP/1.1" 200 205
+INFO 2022-05-21 21:07:15,798 autoreload 251 D:\django project\Elibrary\apps\books\views.py changed, reloading.
+INFO 2022-05-21 21:07:16,831 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-05-21 21:07:41,054 basehttp 161 "GET /daily_book/ HTTP/1.1" 200 1045
+INFO 2022-05-21 21:08:20,517 autoreload 251 D:\django project\Elibrary\apps\books\views.py changed, reloading.
+INFO 2022-05-21 21:08:21,321 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-05-21 21:10:21,525 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-05-21 21:10:57,676 autoreload 637 Watching for file changes with StatReloader
+WARNING 2022-05-21 21:11:08,461 log 224 Not Found: /report/
+WARNING 2022-05-21 21:11:08,462 basehttp 161 "GET /report/ HTTP/1.1" 404 6049
+INFO 2022-05-21 21:12:04,705 autoreload 637 Watching for file changes with StatReloader
+ERROR 2022-05-21 21:12:06,272 log 224 Internal Server Error: /report/
+Traceback (most recent call last):
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\django project\Elibrary\apps\books\views.py", line 201, in get
+    return Response(serializer.data)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\serializers.py", line 555, in data
+    ret = super().data
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\serializers.py", line 249, in data
+    raise AssertionError(msg)
+AssertionError: When a serializer is passed a `data` keyword argument you must call `.is_valid()` before attempting to access the serialized `.data` representation.
+You should either call `.is_valid()` first, or access `.initial_data` instead.
+ERROR 2022-05-21 21:12:06,272 basehttp 161 "GET /report/ HTTP/1.1" 500 103798
+INFO 2022-05-21 21:12:32,426 autoreload 637 Watching for file changes with StatReloader
+WARNING 2022-05-21 21:12:34,832 log 224 Bad Request: /report/
+WARNING 2022-05-21 21:12:34,832 basehttp 161 "GET /report/ HTTP/1.1" 400 79
+INFO 2022-05-21 21:12:51,911 autoreload 637 Watching for file changes with StatReloader
+ERROR 2022-05-21 21:12:52,704 log 224 Internal Server Error: /report/
+Traceback (most recent call last):
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\base.py", line 204, in _get_response
+    response = response.render()
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\template\response.py", line 105, in render
+    self.content = self.rendered_content
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\renderers.py", line 100, in render
+    ret = json.dumps(
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\utils\json.py", line 25, in dumps
+    return json.dumps(*args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\json\__init__.py", line 234, in dumps
+    return cls(
+  File "D:\anaconda3\envs\django_new\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "D:\anaconda3\envs\django_new\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\utils\encoders.py", line 67, in default
+    return super().default(obj)
+  File "D:\anaconda3\envs\django_new\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type ReportInfo is not JSON serializable
+ERROR 2022-05-21 21:12:52,704 basehttp 161 "GET /report/ HTTP/1.1" 500 100286
+INFO 2022-05-21 21:14:01,656 autoreload 637 Watching for file changes with StatReloader
+ERROR 2022-05-21 21:14:03,239 log 224 Internal Server Error: /report/
+Traceback (most recent call last):
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\django project\Elibrary\apps\books\views.py", line 203, in get
+    list.append(serialzer.data)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\serializers.py", line 555, in data
+    ret = super().data
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\serializers.py", line 249, in data
+    raise AssertionError(msg)
+AssertionError: When a serializer is passed a `data` keyword argument you must call `.is_valid()` before attempting to access the serialized `.data` representation.
+You should either call `.is_valid()` first, or access `.initial_data` instead.
+ERROR 2022-05-21 21:14:03,239 basehttp 161 "GET /report/ HTTP/1.1" 500 103984
+INFO 2022-05-21 21:14:20,502 autoreload 637 Watching for file changes with StatReloader
+WARNING 2022-05-21 21:14:21,147 log 224 Bad Request: /report/
+WARNING 2022-05-21 21:14:21,147 basehttp 161 "GET /report/ HTTP/1.1" 400 81
+INFO 2022-05-21 21:14:53,247 autoreload 637 Watching for file changes with StatReloader
+WARNING 2022-05-21 21:14:54,594 log 224 Bad Request: /report/
+WARNING 2022-05-21 21:14:54,595 basehttp 161 "GET /report/ HTTP/1.1" 400 81
+INFO 2022-05-21 21:15:29,835 autoreload 251 D:\django project\Elibrary\apps\books\urls.py changed, reloading.
+INFO 2022-05-21 21:15:30,668 autoreload 637 Watching for file changes with StatReloader
+WARNING 2022-05-21 21:15:34,409 log 224 Bad Request: /report/
+WARNING 2022-05-21 21:15:34,410 basehttp 161 "GET /report/ HTTP/1.1" 400 81
+INFO 2022-05-21 21:15:43,279 autoreload 637 Watching for file changes with StatReloader
+WARNING 2022-05-21 21:15:44,688 log 224 Bad Request: /report/
+WARNING 2022-05-21 21:15:44,688 basehttp 161 "GET /report/ HTTP/1.1" 400 81
+INFO 2022-05-21 21:15:52,956 autoreload 251 D:\django project\Elibrary\apps\books\views.py changed, reloading.
+INFO 2022-05-21 21:15:53,839 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-05-21 21:16:06,534 autoreload 637 Watching for file changes with StatReloader
+WARNING 2022-05-21 21:16:08,468 log 224 Bad Request: /report/
+WARNING 2022-05-21 21:16:08,468 basehttp 161 "GET /report/ HTTP/1.1" 400 81
+INFO 2022-05-21 21:17:00,728 autoreload 251 D:\django project\Elibrary\apps\books\views.py changed, reloading.
+INFO 2022-05-21 21:17:01,524 autoreload 637 Watching for file changes with StatReloader
+WARNING 2022-05-21 21:17:04,233 log 224 Bad Request: /report/
+WARNING 2022-05-21 21:17:04,233 basehttp 161 "GET /report/ HTTP/1.1" 400 81
+INFO 2022-05-21 21:17:21,807 autoreload 637 Watching for file changes with StatReloader
+WARNING 2022-05-21 21:17:22,529 log 224 Bad Request: /report/
+WARNING 2022-05-21 21:17:22,529 basehttp 161 "GET /report/ HTTP/1.1" 400 81
+INFO 2022-05-21 21:17:55,974 autoreload 637 Watching for file changes with StatReloader
+WARNING 2022-05-21 21:17:57,042 log 224 Bad Request: /report/
+WARNING 2022-05-21 21:17:57,042 basehttp 161 "GET /report/ HTTP/1.1" 400 81
+INFO 2022-05-21 21:18:06,186 autoreload 637 Watching for file changes with StatReloader
+ERROR 2022-05-21 21:18:07,038 log 224 Internal Server Error: /report/
+Traceback (most recent call last):
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\django project\Elibrary\apps\books\views.py", line 204, in get
+    print(serialzer.data)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\serializers.py", line 555, in data
+    ret = super().data
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\serializers.py", line 249, in data
+    raise AssertionError(msg)
+AssertionError: When a serializer is passed a `data` keyword argument you must call `.is_valid()` before attempting to access the serialized `.data` representation.
+You should either call `.is_valid()` first, or access `.initial_data` instead.
+ERROR 2022-05-21 21:18:07,040 basehttp 161 "GET /report/ HTTP/1.1" 500 103992
+INFO 2022-05-21 21:18:19,185 autoreload 637 Watching for file changes with StatReloader
+WARNING 2022-05-21 21:18:20,336 log 224 Bad Request: /report/
+WARNING 2022-05-21 21:18:20,337 basehttp 161 "GET /report/ HTTP/1.1" 400 81
+INFO 2022-05-21 21:19:14,639 basehttp 161 "POST /report/3/ HTTP/1.1" 200 205
+INFO 2022-05-21 21:19:40,094 autoreload 251 D:\django project\Elibrary\apps\books\views.py changed, reloading.
+INFO 2022-05-21 21:19:42,095 autoreload 637 Watching for file changes with StatReloader
+ERROR 2022-05-21 21:19:45,495 log 224 Internal Server Error: /report/3/
+Traceback (most recent call last):
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+TypeError: get() got an unexpected keyword argument 'pk'
+ERROR 2022-05-21 21:19:45,495 basehttp 161 "GET /report/3/ HTTP/1.1" 500 87313
+WARNING 2022-05-21 21:19:54,929 log 224 Bad Request: /report/
+WARNING 2022-05-21 21:19:54,930 basehttp 161 "GET /report/ HTTP/1.1" 400 81
+INFO 2022-05-21 21:21:18,389 autoreload 637 Watching for file changes with StatReloader
+ERROR 2022-05-21 21:21:19,877 log 224 Internal Server Error: /report/
+Traceback (most recent call last):
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\django project\Elibrary\apps\books\views.py", line 203, in get
+    list.append(BookReportSerializer(data=i).data)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\serializers.py", line 555, in data
+    ret = super().data
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\serializers.py", line 249, in data
+    raise AssertionError(msg)
+AssertionError: When a serializer is passed a `data` keyword argument you must call `.is_valid()` before attempting to access the serialized `.data` representation.
+You should either call `.is_valid()` first, or access `.initial_data` instead.
+ERROR 2022-05-21 21:21:19,877 basehttp 161 "GET /report/ HTTP/1.1" 500 102829
+INFO 2022-05-21 21:21:44,813 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-05-21 21:21:45,837 basehttp 161 "GET /report/ HTTP/1.1" 200 619
+INFO 2022-05-21 21:22:08,909 autoreload 251 D:\django project\Elibrary\apps\books\views.py changed, reloading.
+INFO 2022-05-21 21:22:09,766 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-05-21 21:22:53,121 autoreload 637 Watching for file changes with StatReloader
+ERROR 2022-05-21 21:23:02,818 log 224 Internal Server Error: /report/
+Traceback (most recent call last):
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\django project\Elibrary\apps\books\views.py", line 203, in get
+    list = sorted(list,lambda x:x["Reporttime"])
+TypeError: sorted expected 1 argument, got 2
+ERROR 2022-05-21 21:23:02,818 basehttp 161 "GET /report/ HTTP/1.1" 500 92524
+INFO 2022-05-21 21:23:26,558 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-05-21 21:23:27,473 basehttp 161 "GET /report/ HTTP/1.1" 200 619
+INFO 2022-05-21 21:24:33,889 autoreload 251 D:\django project\Elibrary\apps\books\views.py changed, reloading.
+INFO 2022-05-21 21:24:34,648 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-05-21 21:25:23,336 autoreload 251 D:\django project\Elibrary\apps\books\views.py changed, reloading.
+INFO 2022-05-21 21:25:24,191 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-05-21 21:25:34,776 autoreload 251 D:\django project\Elibrary\apps\books\urls.py changed, reloading.
+INFO 2022-05-21 21:25:35,656 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-05-21 21:25:42,276 basehttp 161 "GET /search_undo_msg/ HTTP/1.1" 200 619
+INFO 2022-05-21 21:26:56,329 autoreload 251 D:\django project\Elibrary\apps\books\urls.py changed, reloading.
+INFO 2022-05-21 21:26:57,189 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-05-21 21:28:38,962 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-05-21 21:28:43,873 basehttp 161 "GET /search_msg/ HTTP/1.1" 200 2
+INFO 2022-05-21 21:28:58,040 basehttp 161 "GET /search_msg/ HTTP/1.1" 200 206
+INFO 2022-05-21 21:31:17,840 autoreload 251 D:\django project\Elibrary\apps\user\models.py changed, reloading.
+INFO 2022-05-21 21:31:18,679 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-05-21 21:32:55,249 autoreload 251 D:\django project\Elibrary\apps\user\models.py changed, reloading.
+INFO 2022-05-21 21:32:56,062 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-05-21 21:33:41,050 autoreload 251 D:\django project\Elibrary\apps\user\models.py changed, reloading.
+INFO 2022-05-21 21:33:41,861 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-05-21 21:34:35,218 autoreload 251 D:\django project\Elibrary\apps\user\models.py changed, reloading.
+INFO 2022-05-21 21:34:36,004 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-05-21 21:35:10,490 autoreload 251 D:\django project\Elibrary\apps\user\models.py changed, reloading.
+INFO 2022-05-21 21:35:11,317 autoreload 637 Watching for file changes with StatReloader

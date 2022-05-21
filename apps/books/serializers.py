@@ -1,4 +1,6 @@
-from user.models import FileInfo, DailyInfo, UserInfo, Comment
+import datetime
+
+from user.models import FileInfo, DailyInfo, UserInfo, Comment, ReportInfo
 
 from rest_framework import serializers
 
@@ -7,7 +9,7 @@ from rest_framework import serializers
 class BookSerializer(serializers.Serializer):
     fid = serializers.IntegerField(label="文件编号")
     fname = serializers.CharField(max_length=50, label="文件名称")
-    writer = serializers.CharField(max_length=30,label="作者")
+    writer = serializers.CharField(max_length=30, label="作者")
     # uploader = serializers.IntegerField(label="上传人")
     uploader = serializers.PrimaryKeyRelatedField(label="上传人", queryset=UserInfo.objects.all())
     ave_score = serializers.DecimalField(max_digits=5, decimal_places=2, default=0, label="评分")
@@ -58,7 +60,7 @@ class BasicBookInfo(serializers.Serializer):
             "fid", "fname", "avg_score", "file", "publisher", "ISBN_num", "category", "content", "isvalid",
             "file_photo", "f_fees")
 
-
+# 书籍评论序列化
 class BookCommentSerializer(serializers.Serializer):
     fid = serializers.PrimaryKeyRelatedField(label="书籍id", queryset=FileInfo.objects.all())
     userid = serializers.PrimaryKeyRelatedField(label="用户id", queryset=UserInfo.objects.all())
@@ -74,3 +76,25 @@ class BookCommentSerializer(serializers.Serializer):
         comment = Comment(**validated_data)
         comment.save()
         return comment
+
+# 书籍举报序列化
+class BookReportSerializer(serializers.Serializer):
+    reportid = serializers.IntegerField(label="举报编号")
+    fid = serializers.PrimaryKeyRelatedField(queryset=FileInfo.objects.all(), label="书籍id")
+    imformer = serializers.PrimaryKeyRelatedField(queryset=UserInfo.objects.all(), label="举报人")
+    reported = serializers.PrimaryKeyRelatedField(queryset=UserInfo.objects.all(),label="被举报人")
+    Reporttime = serializers.DateTimeField(default=datetime.datetime.now, label="举报时间")
+    details = serializers.CharField(label="详细举报信息")
+    range = serializers.CharField(max_length=20, label="书籍违规页范围")
+    isdealt = serializers.BooleanField(default=False, label="是否处理")
+    adminstrate = serializers.IntegerField(label="处理人",required=False)
+
+
+    def create(self, validated_data):
+        report = ReportInfo(**validated_data)
+        report.save()
+        return report
+
+    class Meta:
+        model =ReportInfo
+        fields = "__all__"

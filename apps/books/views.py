@@ -7,8 +7,8 @@ from rest_framework.decorators import action
 from rest_framework.viewsets import ModelViewSet
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from user.models import FileInfo, UserInfo, Download, Collection, Comment, DailyInfo
-from books.serializers import BookSerializer, BookCommentSerializer, BasicBookInfo
+from user.models import FileInfo, UserInfo, Download, Collection, Comment, DailyInfo, ReportInfo
+from books.serializers import BookSerializer, BookCommentSerializer, BasicBookInfo, BookReportSerializer
 from user.serializers import UserInfoSerializer
 
 
@@ -83,12 +83,15 @@ class CancelCollectionView(APIView):
 # 书籍封禁
 class BanBookView(APIView):
     def get(self, request, pk=None):
+        # 修改书籍是否封禁
         FileInfo.objects.filter(fid=pk).update(isvalid=False)
         file = FileInfo.objects.get(fid=pk)
         userid = file.uploader
         user = UserInfo.objects.get(username=userid)
         violation = user.violation + 1
+        # 修改用户违规次数
         UserInfo.objects.filter(username=userid).update(violation=violation)
+
         return Response({"msg": "封禁成功！"})
 
 
@@ -121,6 +124,7 @@ class CommentView(APIView):
         data = serializer.data
         return Response(data)
 
+
 # 每日书籍推荐排序
 def daily_recommend_sort(x, y):
     if x.ave_score > y.ave_score:
@@ -142,7 +146,7 @@ class DailyRecommendView(APIView):
         query_set = DailyInfo.objects.all()
         # 如果数据库内为空
         if not query_set:
-            books = FileInfo.objects.all()
+            books = FileInfo.objects.filter(isvalid=True)
             list = []
             for book in books:
                 list.append(book)
@@ -172,7 +176,7 @@ class DailyRecommendView(APIView):
                 # 数据库内的内容是旧的内容
                 else:
                     DailyInfo.objects.all().delete()
-                    books = FileInfo.objects.all()
+                    books = FileInfo.objects.filter(isvalid=True)
                     list = []
                     for book in books:
                         list.append(book)
@@ -185,4 +189,48 @@ class DailyRecommendView(APIView):
                         list[i] = BasicBookInfo(list[i]).data
                     break
 
+        return Response(list)
+
+
+# 书籍举报类
+class BookReportView(APIView):
+    # 提交举报信息
+    def post(self, request, pk=None):
+        data = request.data.copy()
+        user = request.user
+        fid = pk
+        file = FileInfo.objects.get(fid=fid)
+        reported = file.uploader
+        count = ReportInfo.objects.count()
+        data["reportid"] = count + 1
+        data["fid"] = file.fid
+        data["imformer"] = user
+        data["reported"] = reported
+        serializer = BookReportSerializer(data=data)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+        return Response(serializer.data)
+
+
+# 查询未处理书籍举报
+class UndoBookReportView(APIView):
+    # 查询未处理信息
+    def get(self,request):
+        reports = ReportInfo.objects.filter(isdealt=False)
+        list = []
+        for i in reports:
+            list.append(BookReportSerializer(i).data)
+        list = sorted(list,key=lambda x:x["Reporttime"])
+        return Response(list)
+
+# 查询已处理书籍举报
+class DoneBookReportView(APIView):
+    # 查询已处理信息
+    def get(self,request):
+        reports = ReportInfo.objects.filter(isdealt=True)
+        list = []
+        for i in reports:
+            list.append(BookReportSerializer(i).data)
+        list = sorted(list,key=lambda x:x["Reporttime"])
+        list.reverse()
         return Response(list)

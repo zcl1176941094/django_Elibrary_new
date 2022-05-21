@@ -86,7 +86,7 @@ class FileInfo(models.Model):
     #  #文件地址
     file = models.FileField(upload_to=file_save_path, verbose_name="文件地址")
     publisher = models.CharField(max_length=40, verbose_name="出版社", null=True)
-    writer = models.CharField(max_length=30,verbose_name="作者",default="佚名")
+    writer = models.CharField(max_length=30, verbose_name="作者", default="佚名")
     ISBN_num = models.CharField(max_length=40, verbose_name="ISBN码", null=True)
     category = models.CharField(max_length=40, verbose_name="类别")
     content = models.TextField(null=True, verbose_name="简介")
@@ -122,7 +122,7 @@ class Collection(models.Model):
 class Comment(models.Model):
     fid = models.ForeignKey(FileInfo, on_delete=models.CASCADE, related_name='fid_3', db_column="fid")
     userid = models.ForeignKey(UserInfo, on_delete=models.CASCADE, related_name='userid_3', db_column="userid")
-    stime = models.DateTimeField(default=datetime.datetime.now,verbose_name="评论时间")
+    stime = models.DateTimeField(default=datetime.datetime.now, verbose_name="评论时间")
     grade = models.IntegerField(default=5, verbose_name="个人评分")
     evaluation = models.CharField(max_length=255, verbose_name="个人评价")
 
@@ -132,15 +132,22 @@ class Comment(models.Model):
 
 
 class ReportInfo(models.Model):
-    reportid = models.AutoField(primary_key=True, verbose_name="举报编号", db_column="reportid")
+    choices = (
+        (0, "未违规"),
+        (1, "违规"),
+    )
+    reportid = models.IntegerField(primary_key=True, verbose_name="举报编号", db_column="reportid")
     fid = models.ForeignKey(FileInfo, on_delete=models.CASCADE, related_name='fid_4', db_column="fid")
-    imformer = models.ForeignKey(UserInfo, on_delete=models.CASCADE, related_name='imformer_id', db_column="imformer")
-    reported = models.ForeignKey(UserInfo, on_delete=models.CASCADE, related_name='reported_id', db_column="reported")
+    imformer = models.ForeignKey(UserInfo, on_delete=models.CASCADE, related_name='imformer_id', db_column="imformer",
+                                 verbose_name="举报人")
+    reported = models.ForeignKey(UserInfo, on_delete=models.CASCADE, related_name='reported_id', db_column="reported",
+                                 verbose_name="被举报人")
     Reporttime = models.DateTimeField(default=datetime.datetime.now, verbose_name="举报时间")
     details = models.TextField()
-    range = models.CharField(max_length=20, verbose_name="违规范围")
-    isdealt = models.BooleanField(default=False, verbose_name="是否处理1")
-    adminstrate = models.IntegerField(null=True, verbose_name="处理人1")
+    range = models.CharField(max_length=20, verbose_name="书籍违规页范围")
+    isdealt = models.BooleanField(default=False, verbose_name="是否处理")
+    adminstrate = models.ForeignKey(UserInfo, on_delete=models.CASCADE, db_column="adminstrate", verbose_name="处理人")
+    result = models.IntegerField(choices=choices, default=0, verbose_name="处理结果")
 
     class Meta:
         db_table = 'report'
@@ -163,6 +170,7 @@ class DailyInfo(models.Model):
     did = models.IntegerField(primary_key=True, verbose_name="日常推荐id")
     fid = models.ForeignKey(FileInfo, on_delete=models.CASCADE, related_name='fid_5', db_column="daily_fid")
     daily_time = models.DateField(auto_now=True, verbose_name="推荐时间")
+
     # daily_time = models.DateTimeField(auto_now=True, verbose_name="推荐时间")
 
     class Meta:
