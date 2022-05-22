@@ -4,12 +4,26 @@ from functools import cmp_to_key
 from django.http import FileResponse
 from django.shortcuts import render
 from rest_framework.decorators import action
+from rest_framework.pagination import PageNumberPagination
 from rest_framework.viewsets import ModelViewSet
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from user.models import FileInfo, UserInfo, Download, Collection, Comment, DailyInfo, ReportInfo
 from books.serializers import BookSerializer, BookCommentSerializer, BasicBookInfo, BookReportSerializer
 from user.serializers import UserInfoSerializer
+
+
+# 分页函数
+class BooksPagination(PageNumberPagination):
+    # 表示每页多少条数据
+    page_size = 10
+    # 设置每页显示数量
+    page_size_query_param = 'page_size'
+    # 设置显示第几页
+    page_query_param = "page"
+    # 每页最大显示条数
+    max_page_size = 15
+
 
 
 # Create your views here.
@@ -97,17 +111,17 @@ class BanBookView(APIView):
 
 # 书籍评论
 class CommentView(APIView):
+
     # 获取书籍的评论
     def get(self, request, pk=None):
         comments = Comment.objects.filter(fid=pk)
-        list = []
-        for comment in comments:
-            serializer = BookCommentSerializer(comment)
-            data = serializer.data
-            list.append(data)
+        list = BookCommentSerializer(comments,many=True).data
+
         # 按照时间逆序排序（越靠近现在的先输出）
         list = sorted(list, key=lambda x: x["stime"])
         list.reverse()
+        page_obj = BooksPagination()
+        list = page_obj.paginate_queryset(list,request=request,view=self)
         return Response(list)
 
     # 对书籍评论
@@ -188,13 +202,15 @@ class DailyRecommendView(APIView):
                         DailyInfo.objects.create(did=(i + 1), fid=list[i])
                         list[i] = BasicBookInfo(list[i]).data
                     break
-
+        # 数据分页
+        page_obj = BooksPagination()
+        list = page_obj.paginate_queryset(list, request=request, view=self)
         return Response(list)
 
 
 # 书籍举报类
 class BookReportView(APIView):
-    # 获取处理完成的举报信息
+    # 获取用户相关的处理完成的举报信息
     def get(self, request):
         reported = ReportInfo.objects.filter(imformer=request.user.username, isdealt=True)
         list = []
@@ -205,6 +221,9 @@ class BookReportView(APIView):
             data["result"] = result
             list.append(data)
         list = sorted(list, key=lambda x: x["Reporttime"], reverse=True)
+        # 数据分页
+        page_obj = BooksPagination()
+        list = page_obj.paginate_queryset(list, request=request, view=self)
         return Response(list)
 
     # 提交举报信息
@@ -240,6 +259,9 @@ class UndoBookReportView(APIView):
             # list.append(serializer.data)
 
         list = sorted(list, key=lambda x: x["Reporttime"])
+        # 数据分页
+        page_obj = BooksPagination()
+        list = page_obj.paginate_queryset(list, request=request, view=self)
         return Response(list)
 
     # 处理举报信息
@@ -257,7 +279,7 @@ class DoneBookReportView(APIView):
         reports = ReportInfo.objects.filter(isdealt=True)
         list = []
         for i in reports:
-            print(BookReportSerializer(i).data)
+            # print(BookReportSerializer(i).data)
             result = i.get_result_display()
             serializer = BookReportSerializer(i)
             data = serializer.data
@@ -266,6 +288,8 @@ class DoneBookReportView(APIView):
 
         list = sorted(list, key=lambda x: x["Reporttime"])
         list.reverse()
+        page_obj = BooksPagination()
+        list = page_obj.paginate_queryset(list, request=request, view=self)
         return Response(list)
 
 
@@ -273,7 +297,7 @@ class DoneBookReportView(APIView):
 class ReportedView(APIView):
     def get(self, request):
         user = request.user
-        print(type(user))
+        # print(type(user))
         reports = ReportInfo.objects.filter(reported=user.username, result=1)
         list = []
         for i in reports:
@@ -284,6 +308,8 @@ class ReportedView(APIView):
             list.append(data)
         list = sorted(list, key=lambda x: x["Reporttime"])
         list.reverse()
+        page_obj = BooksPagination()
+        list = page_obj.paginate_queryset(list, request=request, view=self)
         return Response(list)
 
 def book_recommend_sort(x, y):
@@ -373,5 +399,8 @@ class SearchBookView(APIView):
                     temp[i]["relevancy"] = relevancy
             list = temp
             list = sorted(list, key=lambda x: x["relevancy"], reverse=True)
+        # 数据分页
+        page_obj = BooksPagination()
+        list = page_obj.paginate_queryset(list, request=request, view=self)
 
         return Response(list)
