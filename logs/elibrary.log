@@ -8846,3 +8846,1073 @@ WARNING 2022-05-21 21:53:34,617 basehttp 161 "POST /manage_report/3/ HTTP/1.1" 4
 INFO 2022-05-21 21:54:00,286 autoreload 637 Watching for file changes with StatReloader
 WARNING 2022-05-21 21:54:03,611 log 224 Bad Request: /manage_report/3/
 WARNING 2022-05-21 21:54:03,611 basehttp 161 "POST /manage_report/3/ HTTP/1.1" 400 75
+INFO 2022-05-21 21:54:29,153 autoreload 637 Watching for file changes with StatReloader
+WARNING 2022-05-21 21:54:29,627 log 224 Bad Request: /manage_report/3/
+WARNING 2022-05-21 21:54:29,627 basehttp 161 "POST /manage_report/3/ HTTP/1.1" 400 75
+WARNING 2022-05-21 21:54:30,331 log 224 Bad Request: /manage_report/3/
+WARNING 2022-05-21 21:54:30,331 basehttp 161 "POST /manage_report/3/ HTTP/1.1" 400 75
+INFO 2022-05-21 21:54:44,917 autoreload 637 Watching for file changes with StatReloader
+WARNING 2022-05-21 21:54:45,275 log 224 Bad Request: /manage_report/3/
+WARNING 2022-05-21 21:54:45,275 basehttp 161 "POST /manage_report/3/ HTTP/1.1" 400 75
+INFO 2022-05-21 21:54:58,051 autoreload 637 Watching for file changes with StatReloader
+WARNING 2022-05-21 21:54:58,825 log 224 Bad Request: /manage_report/3/
+WARNING 2022-05-21 21:54:58,825 basehttp 161 "POST /manage_report/3/ HTTP/1.1" 400 75
+INFO 2022-05-21 21:55:25,341 autoreload 251 D:\django project\Elibrary\apps\books\views.py changed, reloading.
+INFO 2022-05-21 21:55:26,233 autoreload 637 Watching for file changes with StatReloader
+WARNING 2022-05-21 21:55:29,576 log 224 Bad Request: /manage_report/3/
+WARNING 2022-05-21 21:55:29,576 basehttp 161 "POST /manage_report/3/ HTTP/1.1" 400 75
+INFO 2022-05-21 21:55:44,307 autoreload 251 D:\django project\Elibrary\apps\books\urls.py changed, reloading.
+INFO 2022-05-21 21:55:46,105 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-05-21 21:55:47,924 basehttp 161 "POST /manage_report/3/ HTTP/1.1" 200 25
+INFO 2022-05-21 21:56:08,255 autoreload 251 D:\django project\Elibrary\apps\books\views.py changed, reloading.
+INFO 2022-05-21 21:56:09,116 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-05-21 21:56:21,877 autoreload 251 D:\django project\Elibrary\apps\books\views.py changed, reloading.
+INFO 2022-05-21 21:56:22,757 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-05-21 21:59:22,938 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-05-21 21:59:31,291 basehttp 161 "POST /manage_report/4/ HTTP/1.1" 200 25
+INFO 2022-05-21 22:02:28,499 autoreload 251 D:\django project\Elibrary\apps\books\views.py changed, reloading.
+INFO 2022-05-21 22:02:29,368 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-05-21 22:03:55,730 autoreload 251 D:\django project\Elibrary\apps\books\views.py changed, reloading.
+INFO 2022-05-21 22:03:56,604 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-05-21 22:04:40,495 autoreload 251 D:\django project\Elibrary\apps\books\urls.py changed, reloading.
+INFO 2022-05-21 22:04:41,377 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-05-21 22:05:26,623 autoreload 637 Watching for file changes with StatReloader
+ERROR 2022-05-21 22:05:40,952 log 224 Internal Server Error: /get_report/
+Traceback (most recent call last):
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\base.py", line 204, in _get_response
+    response = response.render()
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\template\response.py", line 105, in render
+    self.content = self.rendered_content
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\renderers.py", line 100, in render
+    ret = json.dumps(
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\utils\json.py", line 25, in dumps
+    return json.dumps(*args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\json\__init__.py", line 234, in dumps
+    return cls(
+  File "D:\anaconda3\envs\django_new\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "D:\anaconda3\envs\django_new\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\utils\encoders.py", line 67, in default
+    return super().default(obj)
+  File "D:\anaconda3\envs\django_new\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type ReportInfo is not JSON serializable
+ERROR 2022-05-21 22:05:40,953 basehttp 161 "GET /get_report/ HTTP/1.1" 500 101920
+INFO 2022-05-21 22:06:09,578 autoreload 637 Watching for file changes with StatReloader
+ERROR 2022-05-21 22:06:11,142 log 224 Internal Server Error: /get_report/
+Traceback (most recent call last):
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\fields.py", line 457, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\fields.py", line 97, in get_attribute
+    instance = getattr(instance, attr)
+AttributeError: 'QuerySet' object has no attribute 'reportid'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\django project\Elibrary\apps\books\views.py", line 201, in get
+    return Response(serializer.data)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\serializers.py", line 555, in data
+    ret = super().data
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\serializers.py", line 509, in to_representation
+    attribute = field.get_attribute(instance)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\fields.py", line 490, in get_attribute
+    raise type(exc)(msg)
+AttributeError: Got AttributeError when attempting to get a value for field `reportid` on serializer `BookReportSerializer`.
+The serializer field might be named incorrectly and not match any attribute or key on the `QuerySet` instance.
+Original exception text was: 'QuerySet' object has no attribute 'reportid'.
+ERROR 2022-05-21 22:06:11,142 basehttp 161 "GET /get_report/ HTTP/1.1" 500 124934
+INFO 2022-05-21 22:07:27,333 autoreload 637 Watching for file changes with StatReloader
+ERROR 2022-05-21 22:07:27,976 log 224 Internal Server Error: /get_report/
+Traceback (most recent call last):
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\django project\Elibrary\apps\books\views.py", line 203, in get
+    list.append(serializer.data)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\serializers.py", line 555, in data
+    ret = super().data
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\serializers.py", line 522, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\fields.py", line 963, in to_representation
+    return int(value)
+TypeError: int() argument must be a string, a bytes-like object or a number, not 'UserInfo'
+ERROR 2022-05-21 22:07:27,978 basehttp 161 "GET /get_report/ HTTP/1.1" 500 114334
+ERROR 2022-05-21 22:07:29,345 log 224 Internal Server Error: /get_report/
+Traceback (most recent call last):
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\django project\Elibrary\apps\books\views.py", line 203, in get
+    list.append(serializer.data)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\serializers.py", line 555, in data
+    ret = super().data
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\serializers.py", line 522, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\fields.py", line 963, in to_representation
+    return int(value)
+TypeError: int() argument must be a string, a bytes-like object or a number, not 'UserInfo'
+ERROR 2022-05-21 22:07:29,346 basehttp 161 "GET /get_report/ HTTP/1.1" 500 114334
+INFO 2022-05-21 22:07:46,829 autoreload 637 Watching for file changes with StatReloader
+ERROR 2022-05-21 22:07:48,469 log 224 Internal Server Error: /get_report/
+Traceback (most recent call last):
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\django project\Elibrary\apps\books\views.py", line 203, in get
+    list.append(serializer.data)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\serializers.py", line 555, in data
+    ret = super().data
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\serializers.py", line 522, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\fields.py", line 963, in to_representation
+    return int(value)
+TypeError: int() argument must be a string, a bytes-like object or a number, not 'UserInfo'
+ERROR 2022-05-21 22:07:48,469 basehttp 161 "GET /get_report/ HTTP/1.1" 500 114343
+INFO 2022-05-21 22:08:23,164 autoreload 637 Watching for file changes with StatReloader
+ERROR 2022-05-21 22:08:24,868 log 224 Internal Server Error: /get_report/
+Traceback (most recent call last):
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\django project\Elibrary\apps\books\views.py", line 204, in get
+    list.append(serializer.data)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\serializers.py", line 555, in data
+    ret = super().data
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\serializers.py", line 522, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\fields.py", line 963, in to_representation
+    return int(value)
+TypeError: int() argument must be a string, a bytes-like object or a number, not 'UserInfo'
+ERROR 2022-05-21 22:08:24,870 basehttp 161 "GET /get_report/ HTTP/1.1" 500 114336
+INFO 2022-05-21 22:09:02,388 autoreload 637 Watching for file changes with StatReloader
+ERROR 2022-05-21 22:09:04,323 log 224 Internal Server Error: /get_report/
+Traceback (most recent call last):
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\django project\Elibrary\apps\books\views.py", line 203, in get
+    list.append(serializer.data)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\serializers.py", line 555, in data
+    ret = super().data
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\serializers.py", line 522, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\fields.py", line 963, in to_representation
+    return int(value)
+TypeError: int() argument must be a string, a bytes-like object or a number, not 'UserInfo'
+ERROR 2022-05-21 22:09:04,325 basehttp 161 "GET /get_report/ HTTP/1.1" 500 114343
+INFO 2022-05-21 22:11:09,022 autoreload 637 Watching for file changes with StatReloader
+ERROR 2022-05-21 22:11:10,790 log 224 Internal Server Error: /get_report/
+Traceback (most recent call last):
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\django project\Elibrary\apps\books\views.py", line 204, in get
+    print(serializer.data)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\serializers.py", line 555, in data
+    ret = super().data
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\serializers.py", line 522, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\fields.py", line 963, in to_representation
+    return int(value)
+TypeError: int() argument must be a string, a bytes-like object or a number, not 'UserInfo'
+ERROR 2022-05-21 22:11:10,791 basehttp 161 "GET /get_report/ HTTP/1.1" 500 114341
+INFO 2022-05-21 22:11:52,354 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-05-21 22:11:53,923 basehttp 161 "GET /get_report/ HTTP/1.1" 200 650
+INFO 2022-05-21 22:12:56,244 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-05-21 22:12:58,267 basehttp 161 "GET /get_report/ HTTP/1.1" 200 433
+INFO 2022-05-21 22:13:48,792 autoreload 251 D:\django project\Elibrary\apps\books\views.py changed, reloading.
+INFO 2022-05-21 22:13:49,616 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-05-22 09:37:46,528 autoreload 251 D:\django project\Elibrary\apps\user\models.py changed, reloading.
+INFO 2022-05-22 09:37:47,588 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-05-22 09:37:59,112 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-05-22 09:38:03,571 basehttp 161 "GET /get_report/ HTTP/1.1" 200 433
+INFO 2022-05-22 09:44:39,346 autoreload 251 D:\django project\Elibrary\apps\user\models.py changed, reloading.
+INFO 2022-05-22 09:44:40,407 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-05-22 09:46:18,423 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-05-22 09:46:22,427 basehttp 161 "GET /get_report/ HTTP/1.1" 200 433
+INFO 2022-05-22 09:46:53,303 basehttp 161 "GET /get_report/ HTTP/1.1" 200 433
+INFO 2022-05-22 09:47:29,568 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-05-22 09:47:31,582 basehttp 161 "GET /get_report/ HTTP/1.1" 200 433
+INFO 2022-05-22 09:48:28,594 autoreload 637 Watching for file changes with StatReloader
+ERROR 2022-05-22 09:48:30,511 log 224 Internal Server Error: /get_report/
+Traceback (most recent call last):
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\django project\Elibrary\apps\books\views.py", line 204, in get
+    list.append(serializer.data)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\serializers.py", line 555, in data
+    ret = super().data
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\serializers.py", line 522, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\fields.py", line 963, in to_representation
+    return int(value)
+ValueError: invalid literal for int() with base 10: 'Î´Î¥¹æ'
+ERROR 2022-05-22 09:48:30,515 basehttp 161 "GET /get_report/ HTTP/1.1" 500 112875
+INFO 2022-05-22 09:49:24,208 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-05-22 09:49:26,462 basehttp 161 "GET /get_report/ HTTP/1.1" 200 433
+INFO 2022-05-22 09:49:50,100 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-05-22 09:50:15,841 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-05-22 09:50:17,514 basehttp 161 "GET /get_report/ HTTP/1.1" 200 450
+INFO 2022-05-22 09:52:23,108 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-05-22 09:52:40,573 basehttp 161 "GET /search_msg/ HTTP/1.1" 200 450
+INFO 2022-05-22 09:52:57,195 basehttp 161 "GET /search_undo_msg/ HTTP/1.1" 200 228
+INFO 2022-05-22 09:54:26,877 basehttp 161 "POST /report/2/ HTTP/1.1" 200 25
+INFO 2022-05-22 09:55:19,012 basehttp 161 "GET /search_undo_msg/ HTTP/1.1" 200 434
+INFO 2022-05-22 09:55:52,519 basehttp 161 "GET /search_msg/ HTTP/1.1" 200 450
+INFO 2022-05-22 09:57:15,073 basehttp 161 "GET /get_report/ HTTP/1.1" 200 450
+INFO 2022-05-22 10:51:19,442 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-05-22 10:51:20,620 basehttp 161 "POST /books/ HTTP/1.1" 200 25
+INFO 2022-05-22 10:52:12,906 basehttp 161 "POST /report/4/ HTTP/1.1" 200 25
+ERROR 2022-05-22 10:53:14,428 log 224 Internal Server Error: /manage_report/5
+Traceback (most recent call last):
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\utils\deprecation.py", line 116, in __call__
+    response = self.process_request(request)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\middleware\common.py", line 54, in process_request
+    path = self.get_full_path_with_slash(request)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\middleware\common.py", line 88, in get_full_path_with_slash
+    raise RuntimeError(
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 127.0.0.1:8000/manage_report/5/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+ERROR 2022-05-22 10:53:14,428 basehttp 161 "POST /manage_report/5 HTTP/1.1" 500 70471
+INFO 2022-05-22 10:53:19,280 basehttp 161 "POST /manage_report/5/ HTTP/1.1" 200 25
+INFO 2022-05-22 10:54:51,186 autoreload 251 D:\django project\Elibrary\apps\books\views.py changed, reloading.
+INFO 2022-05-22 10:54:52,073 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-05-22 10:55:56,894 autoreload 637 Watching for file changes with StatReloader
+ERROR 2022-05-22 10:56:09,929 log 224 Internal Server Error: /get_reported/
+Traceback (most recent call last):
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\django project\Elibrary\apps\books\views.py", line 278, in get
+    data = serializer.data
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\serializers.py", line 555, in data
+    ret = super().data
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\serializers.py", line 522, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\fields.py", line 963, in to_representation
+    return int(value)
+TypeError: int() argument must be a string, a bytes-like object or a number, not 'UserInfo'
+ERROR 2022-05-22 10:56:09,947 basehttp 161 "GET /get_reported/ HTTP/1.1" 500 113451
+INFO 2022-05-22 10:56:39,792 autoreload 637 Watching for file changes with StatReloader
+ERROR 2022-05-22 10:56:41,614 log 224 Internal Server Error: /get_reported/
+Traceback (most recent call last):
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\django project\Elibrary\apps\books\views.py", line 278, in get
+    data = serializer.data
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\serializers.py", line 555, in data
+    ret = super().data
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\serializers.py", line 522, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\fields.py", line 963, in to_representation
+    return int(value)
+TypeError: int() argument must be a string, a bytes-like object or a number, not 'UserInfo'
+ERROR 2022-05-22 10:56:41,614 basehttp 161 "GET /get_reported/ HTTP/1.1" 500 113442
+INFO 2022-05-22 10:57:24,340 autoreload 637 Watching for file changes with StatReloader
+ERROR 2022-05-22 10:57:25,587 log 224 Internal Server Error: /get_reported/
+Traceback (most recent call last):
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\django project\Elibrary\apps\books\views.py", line 279, in get
+    data = serializer.data
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\serializers.py", line 555, in data
+    ret = super().data
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\serializers.py", line 522, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\fields.py", line 963, in to_representation
+    return int(value)
+TypeError: int() argument must be a string, a bytes-like object or a number, not 'UserInfo'
+ERROR 2022-05-22 10:57:25,587 basehttp 161 "GET /get_reported/ HTTP/1.1" 500 113450
+INFO 2022-05-22 10:58:13,897 autoreload 637 Watching for file changes with StatReloader
+ERROR 2022-05-22 10:58:25,621 log 224 Internal Server Error: /get_report/
+Traceback (most recent call last):
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\django project\Elibrary\apps\books\views.py", line 204, in get
+    data = serializer.data
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\serializers.py", line 555, in data
+    ret = super().data
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\serializers.py", line 522, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\fields.py", line 963, in to_representation
+    return int(value)
+TypeError: int() argument must be a string, a bytes-like object or a number, not 'UserInfo'
+ERROR 2022-05-22 10:58:25,621 basehttp 161 "GET /get_report/ HTTP/1.1" 500 114806
+ERROR 2022-05-22 11:00:05,816 log 224 Internal Server Error: /search_msg/
+Traceback (most recent call last):
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\django project\Elibrary\apps\books\views.py", line 261, in get
+    data = serializer.data
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\serializers.py", line 555, in data
+    ret = super().data
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\serializers.py", line 522, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\fields.py", line 963, in to_representation
+    return int(value)
+TypeError: int() argument must be a string, a bytes-like object or a number, not 'UserInfo'
+ERROR 2022-05-22 11:00:05,816 basehttp 161 "GET /search_msg/ HTTP/1.1" 500 114803
+INFO 2022-05-22 11:01:08,754 autoreload 251 D:\django project\Elibrary\apps\books\urls.py changed, reloading.
+INFO 2022-05-22 11:01:10,917 autoreload 637 Watching for file changes with StatReloader
+ERROR 2022-05-22 11:01:12,010 log 224 Internal Server Error: /search_msg/
+Traceback (most recent call last):
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\django project\Elibrary\apps\books\views.py", line 261, in get
+    data = serializer.data
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\serializers.py", line 555, in data
+    ret = super().data
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\serializers.py", line 522, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\fields.py", line 963, in to_representation
+    return int(value)
+TypeError: int() argument must be a string, a bytes-like object or a number, not 'UserInfo'
+ERROR 2022-05-22 11:01:12,010 basehttp 161 "GET /search_msg/ HTTP/1.1" 500 114803
+ERROR 2022-05-22 11:01:14,683 log 224 Internal Server Error: /search_msg/
+Traceback (most recent call last):
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\django project\Elibrary\apps\books\views.py", line 261, in get
+    data = serializer.data
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\serializers.py", line 555, in data
+    ret = super().data
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\serializers.py", line 522, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\fields.py", line 963, in to_representation
+    return int(value)
+TypeError: int() argument must be a string, a bytes-like object or a number, not 'UserInfo'
+ERROR 2022-05-22 11:01:14,684 basehttp 161 "GET /search_msg/ HTTP/1.1" 500 114803
+INFO 2022-05-22 11:01:40,973 autoreload 637 Watching for file changes with StatReloader
+ERROR 2022-05-22 11:01:42,979 log 224 Internal Server Error: /search_msg/
+Traceback (most recent call last):
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\django project\Elibrary\apps\books\views.py", line 261, in get
+    data = serializer.data
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\serializers.py", line 555, in data
+    ret = super().data
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\serializers.py", line 522, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\fields.py", line 963, in to_representation
+    return int(value)
+TypeError: int() argument must be a string, a bytes-like object or a number, not 'UserInfo'
+ERROR 2022-05-22 11:01:42,979 basehttp 161 "GET /search_msg/ HTTP/1.1" 500 114803
+INFO 2022-05-22 11:02:41,557 autoreload 637 Watching for file changes with StatReloader
+ERROR 2022-05-22 11:02:43,422 log 224 Internal Server Error: /search_msg/
+Traceback (most recent call last):
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\django project\Elibrary\apps\books\views.py", line 261, in get
+    data = serializer.data
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\serializers.py", line 555, in data
+    ret = super().data
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\serializers.py", line 522, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\fields.py", line 963, in to_representation
+    return int(value)
+TypeError: int() argument must be a string, a bytes-like object or a number, not 'UserInfo'
+ERROR 2022-05-22 11:02:43,422 basehttp 161 "GET /search_msg/ HTTP/1.1" 500 114803
+INFO 2022-05-22 11:03:12,359 autoreload 637 Watching for file changes with StatReloader
+ERROR 2022-05-22 11:03:13,910 log 224 Internal Server Error: /search_msg/
+Traceback (most recent call last):
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\django project\Elibrary\apps\books\views.py", line 261, in get
+    data = serializer.data
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\serializers.py", line 555, in data
+    ret = super().data
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\serializers.py", line 522, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\fields.py", line 963, in to_representation
+    return int(value)
+TypeError: int() argument must be a string, a bytes-like object or a number, not 'UserInfo'
+ERROR 2022-05-22 11:03:13,910 basehttp 161 "GET /search_msg/ HTTP/1.1" 500 114751
+INFO 2022-05-22 11:05:08,104 autoreload 251 D:\django project\Elibrary\apps\books\urls.py changed, reloading.
+INFO 2022-05-22 11:05:09,093 autoreload 637 Watching for file changes with StatReloader
+ERROR 2022-05-22 11:05:09,736 log 224 Internal Server Error: /search_msg/
+Traceback (most recent call last):
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\django project\Elibrary\apps\books\views.py", line 261, in get
+    data = serializer.data
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\serializers.py", line 555, in data
+    ret = super().data
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\serializers.py", line 522, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\fields.py", line 963, in to_representation
+    return int(value)
+TypeError: int() argument must be a string, a bytes-like object or a number, not 'UserInfo'
+ERROR 2022-05-22 11:05:09,736 basehttp 161 "GET /search_msg/ HTTP/1.1" 500 114751
+INFO 2022-05-22 11:06:38,007 autoreload 637 Watching for file changes with StatReloader
+ERROR 2022-05-22 11:06:40,090 log 224 Internal Server Error: /search_msg/
+Traceback (most recent call last):
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\django project\Elibrary\apps\books\views.py", line 266, in get
+    list.append(serializer.data)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\serializers.py", line 555, in data
+    ret = super().data
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\serializers.py", line 522, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\fields.py", line 963, in to_representation
+    return int(value)
+TypeError: int() argument must be a string, a bytes-like object or a number, not 'UserInfo'
+ERROR 2022-05-22 11:06:40,090 basehttp 161 "GET /search_msg/ HTTP/1.1" 500 114145
+INFO 2022-05-22 11:07:25,703 autoreload 637 Watching for file changes with StatReloader
+ERROR 2022-05-22 11:07:27,336 log 224 Internal Server Error: /search_msg/
+Traceback (most recent call last):
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\django project\Elibrary\apps\books\views.py", line 267, in get
+    list.append(serializer.data)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\serializers.py", line 555, in data
+    ret = super().data
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\serializers.py", line 522, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\fields.py", line 963, in to_representation
+    return int(value)
+TypeError: int() argument must be a string, a bytes-like object or a number, not 'UserInfo'
+ERROR 2022-05-22 11:07:27,336 basehttp 161 "GET /search_msg/ HTTP/1.1" 500 113978
+INFO 2022-05-22 11:08:28,147 autoreload 637 Watching for file changes with StatReloader
+ERROR 2022-05-22 11:08:29,825 log 224 Internal Server Error: /search_msg/
+Traceback (most recent call last):
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\django project\Elibrary\apps\books\views.py", line 267, in get
+    list.append(BookReportSerializer(i).data)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\serializers.py", line 555, in data
+    ret = super().data
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\serializers.py", line 522, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\fields.py", line 963, in to_representation
+    return int(value)
+TypeError: int() argument must be a string, a bytes-like object or a number, not 'UserInfo'
+ERROR 2022-05-22 11:08:29,825 basehttp 161 "GET /search_msg/ HTTP/1.1" 500 112672
+INFO 2022-05-22 11:08:54,555 autoreload 637 Watching for file changes with StatReloader
+ERROR 2022-05-22 11:08:58,924 log 224 Internal Server Error: /search_msg/
+Traceback (most recent call last):
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\django project\Elibrary\apps\books\views.py", line 267, in get
+    list.append(BookReportSerializer(i).data)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\serializers.py", line 555, in data
+    ret = super().data
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\serializers.py", line 522, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\fields.py", line 963, in to_representation
+    return int(value)
+TypeError: int() argument must be a string, a bytes-like object or a number, not 'UserInfo'
+ERROR 2022-05-22 11:08:58,924 basehttp 161 "GET /search_msg/ HTTP/1.1" 500 112714
+INFO 2022-05-22 11:09:14,685 autoreload 637 Watching for file changes with StatReloader
+ERROR 2022-05-22 11:09:15,783 log 224 Internal Server Error: /search_msg/
+Traceback (most recent call last):
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\django project\Elibrary\apps\books\views.py", line 261, in get
+    print(BookReportSerializer(i).data)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\serializers.py", line 555, in data
+    ret = super().data
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\serializers.py", line 522, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\fields.py", line 963, in to_representation
+    return int(value)
+TypeError: int() argument must be a string, a bytes-like object or a number, not 'UserInfo'
+ERROR 2022-05-22 11:09:15,783 basehttp 161 "GET /search_msg/ HTTP/1.1" 500 112785
+INFO 2022-05-22 11:10:10,028 autoreload 637 Watching for file changes with StatReloader
+ERROR 2022-05-22 11:10:11,790 log 224 Internal Server Error: /search_msg/
+Traceback (most recent call last):
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\django project\Elibrary\apps\books\views.py", line 261, in get
+    print(BookReportSerializer(i).data)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\serializers.py", line 555, in data
+    ret = super().data
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\serializers.py", line 522, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\fields.py", line 963, in to_representation
+    return int(value)
+TypeError: int() argument must be a string, a bytes-like object or a number, not 'UserInfo'
+ERROR 2022-05-22 11:10:11,790 basehttp 161 "GET /search_msg/ HTTP/1.1" 500 112785
+INFO 2022-05-22 11:10:17,725 autoreload 637 Watching for file changes with StatReloader
+ERROR 2022-05-22 11:10:20,728 log 224 Internal Server Error: /search_msg/
+Traceback (most recent call last):
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\django project\Elibrary\apps\books\views.py", line 261, in get
+    print(BookReportSerializer(i).data)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\serializers.py", line 555, in data
+    ret = super().data
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\serializers.py", line 522, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\fields.py", line 963, in to_representation
+    return int(value)
+TypeError: int() argument must be a string, a bytes-like object or a number, not 'UserInfo'
+ERROR 2022-05-22 11:10:20,728 basehttp 161 "GET /search_msg/ HTTP/1.1" 500 112785
+INFO 2022-05-22 11:11:03,297 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-05-22 11:11:05,009 basehttp 161 "GET /search_msg/ HTTP/1.1" 200 433
+INFO 2022-05-22 11:11:55,534 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-05-22 11:11:57,346 basehttp 161 "GET /search_msg/ HTTP/1.1" 200 450
+ERROR 2022-05-22 11:13:15,267 log 224 Internal Server Error: /report/4/
+Traceback (most recent call last):
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+TypeError: get() got an unexpected keyword argument 'pk'
+ERROR 2022-05-22 11:13:15,275 basehttp 161 "GET /report/4/ HTTP/1.1" 500 87315
+INFO 2022-05-22 11:13:24,098 basehttp 161 "POST /report/4/ HTTP/1.1" 200 25
+ERROR 2022-05-22 11:13:54,464 log 224 Internal Server Error: /search_undo_msg/
+Traceback (most recent call last):
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\utils\datastructures.py", line 76, in __getitem__
+    list_ = super().__getitem__(key)
+KeyError: 'result'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\django project\Elibrary\apps\books\views.py", line 247, in post
+    result = request.data["result"]
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\utils\datastructures.py", line 78, in __getitem__
+    raise MultiValueDictKeyError(key)
+django.utils.datastructures.MultiValueDictKeyError: 'result'
+ERROR 2022-05-22 11:13:54,464 basehttp 161 "POST /search_undo_msg/ HTTP/1.1" 500 99886
+INFO 2022-05-22 11:14:52,805 autoreload 637 Watching for file changes with StatReloader
+ERROR 2022-05-22 11:14:54,022 log 224 Internal Server Error: /search_undo_msg/
+Traceback (most recent call last):
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\utils\datastructures.py", line 76, in __getitem__
+    list_ = super().__getitem__(key)
+KeyError: 'result'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\django project\Elibrary\apps\books\views.py", line 247, in post
+    result = request.data["result"]
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\utils\datastructures.py", line 78, in __getitem__
+    raise MultiValueDictKeyError(key)
+django.utils.datastructures.MultiValueDictKeyError: 'result'
+ERROR 2022-05-22 11:14:54,022 basehttp 161 "POST /search_undo_msg/ HTTP/1.1" 500 99886
+INFO 2022-05-22 11:15:29,353 basehttp 161 "GET /search_undo_msg/ HTTP/1.1" 200 640
+INFO 2022-05-22 11:15:58,575 basehttp 161 "GET /search_msg/ HTTP/1.1" 200 450
+INFO 2022-05-22 11:16:25,004 basehttp 161 "GET /search_msg/ HTTP/1.1" 200 655
+INFO 2022-05-22 11:17:00,566 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-05-22 11:17:16,326 basehttp 161 "GET /get_reported/ HTTP/1.1" 200 2
+INFO 2022-05-22 11:17:24,356 basehttp 161 "POST /books/ HTTP/1.1" 200 25
+INFO 2022-05-22 11:17:46,346 basehttp 161 "POST /report/5/ HTTP/1.1" 200 25
+INFO 2022-05-22 11:18:32,889 basehttp 161 "GET /get_reported/ HTTP/1.1" 200 203
+INFO 2022-05-22 11:19:26,074 autoreload 251 D:\django project\Elibrary\apps\books\views.py changed, reloading.
+INFO 2022-05-22 11:19:26,932 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-05-22 11:20:01,442 autoreload 251 D:\django project\Elibrary\apps\books\views.py changed, reloading.
+INFO 2022-05-22 11:20:02,303 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-05-22 11:29:00,503 autoreload 251 D:\django project\Elibrary\apps\books\views.py changed, reloading.
+INFO 2022-05-22 11:29:01,389 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-05-22 11:39:49,678 autoreload 251 D:\django project\Elibrary\apps\books\views.py changed, reloading.
+INFO 2022-05-22 11:39:50,551 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-05-22 11:42:02,153 autoreload 251 D:\django project\Elibrary\apps\books\views.py changed, reloading.
+INFO 2022-05-22 11:42:03,065 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-05-22 11:43:02,965 autoreload 251 D:\django project\Elibrary\apps\books\views.py changed, reloading.
+INFO 2022-05-22 11:43:03,870 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-05-22 11:52:42,678 autoreload 251 D:\django project\Elibrary\apps\books\views.py changed, reloading.
+INFO 2022-05-22 11:52:43,606 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-05-22 11:56:32,383 autoreload 251 D:\django project\Elibrary\apps\books\views.py changed, reloading.
+INFO 2022-05-22 11:56:33,272 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-05-22 11:56:57,411 autoreload 251 D:\django project\Elibrary\apps\books\urls.py changed, reloading.
+INFO 2022-05-22 11:56:58,279 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-05-22 11:57:29,680 autoreload 251 D:\django project\Elibrary\apps\books\urls.py changed, reloading.
+INFO 2022-05-22 11:57:30,561 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-05-22 11:58:30,874 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-05-22 11:58:32,591 basehttp 161 "GET /search_books/ HTTP/1.1" 200 913
+INFO 2022-05-22 11:59:07,194 basehttp 161 "GET /search_books/ HTTP/1.1" 200 911
+INFO 2022-05-22 11:59:30,188 basehttp 161 "GET /search_books/ HTTP/1.1" 200 911
+INFO 2022-05-22 11:59:49,419 basehttp 161 "GET /search_books/ HTTP/1.1" 200 456
+INFO 2022-05-22 12:00:05,454 basehttp 161 "GET /search_books/ HTTP/1.1" 200 1761
+INFO 2022-05-22 12:00:23,937 basehttp 161 "GET /search_books/ HTTP/1.1" 200 853
+ERROR 2022-05-22 12:03:09,920 log 224 Internal Server Error: /search_books/
+Traceback (most recent call last):
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\django project\Elibrary\apps\books\views.py", line 316, in get
+    list = sorted(temp, key=cmp_to_key(daily_recommend_sort))
+  File "D:\django project\Elibrary\apps\books\views.py", line 130, in daily_recommend_sort
+    if x.ave_score > y.ave_score:
+AttributeError: 'ReturnDict' object has no attribute 'ave_score'
+ERROR 2022-05-22 12:03:09,921 basehttp 161 "GET /search_books/ HTTP/1.1" 500 105512
+INFO 2022-05-22 12:05:57,534 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-05-22 12:05:59,518 basehttp 161 "GET /search_books/ HTTP/1.1" 200 853
+INFO 2022-05-22 12:06:10,744 basehttp 161 "GET /search_books/ HTTP/1.1" 200 1701

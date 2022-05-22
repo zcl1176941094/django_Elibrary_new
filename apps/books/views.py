@@ -194,6 +194,19 @@ class DailyRecommendView(APIView):
 
 # 书籍举报类
 class BookReportView(APIView):
+    # 获取处理完成的举报信息
+    def get(self, request):
+        reported = ReportInfo.objects.filter(imformer=request.user.username, isdealt=True)
+        list = []
+        for i in reported:
+            result = i.get_result_display()
+            serializer = BookReportSerializer(i)
+            data = serializer.data
+            data["result"] = result
+            list.append(data)
+        list = sorted(list, key=lambda x: x["Reporttime"], reverse=True)
+        return Response(list)
+
     # 提交举报信息
     def post(self, request, pk=None):
         data = request.data.copy()
@@ -209,7 +222,7 @@ class BookReportView(APIView):
         serializer = BookReportSerializer(data=data)
         serializer.is_valid(raise_exception=True)
         serializer.save()
-        return Response(serializer.data)
+        return Response({"msg": "提交成功！"})
 
 
 # 查询未处理书籍举报
@@ -219,18 +232,22 @@ class UndoBookReportView(APIView):
         reports = ReportInfo.objects.filter(isdealt=False)
         list = []
         for i in reports:
-            list.append(BookReportSerializer(i).data)
+            result = i.get_result_display()
+            serializer = BookReportSerializer(i)
+            data = serializer.data
+            data["result"] = result
+            list.append(data)
+            # list.append(serializer.data)
+
         list = sorted(list, key=lambda x: x["Reporttime"])
         return Response(list)
 
     # 处理举报信息
     def post(self, request, pk=None):
-
         result = request.data["result"]
-        print(ReportInfo.objects.get(reportid=pk))
-        ReportInfo.objects.filter(reportid=pk).update(isdealt=True,result=result)
-
-        return Response({'msg':'处理成功！'})
+        user = request.user
+        ReportInfo.objects.filter(reportid=pk).update(isdealt=True, result=result, adminstrate=user)
+        return Response({'msg': '处理成功！'})
 
 
 # 查询已处理书籍举报
@@ -240,7 +257,121 @@ class DoneBookReportView(APIView):
         reports = ReportInfo.objects.filter(isdealt=True)
         list = []
         for i in reports:
-            list.append(BookReportSerializer(i).data)
+            print(BookReportSerializer(i).data)
+            result = i.get_result_display()
+            serializer = BookReportSerializer(i)
+            data = serializer.data
+            data["result"] = result
+            list.append(data)
+
         list = sorted(list, key=lambda x: x["Reporttime"])
         list.reverse()
+        return Response(list)
+
+
+# 获取被举报违规信息
+class ReportedView(APIView):
+    def get(self, request):
+        user = request.user
+        print(type(user))
+        reports = ReportInfo.objects.filter(reported=user.username, result=1)
+        list = []
+        for i in reports:
+            result = i.get_result_display()
+            serializer = BookReportSerializer(i)
+            data = serializer.data
+            data["result"] = result
+            list.append(data)
+        list = sorted(list, key=lambda x: x["Reporttime"])
+        list.reverse()
+        return Response(list)
+
+def book_recommend_sort(x, y):
+    if x["ave_score"] > y["ave_score"]:
+        return -1
+    elif x["download_times"] > y["download_times"]:
+        return -1
+    elif x["collection_times"] > y["collection_times"]:
+        return -1
+    elif x["comment_times"] > y["comment_times"]:
+        return -1
+    else:
+        return 1
+    return 0
+
+
+# # 搜索查询书籍
+class SearchBookView(APIView):
+
+    def get(self, request):
+        queryset = FileInfo.objects.filter(isvalid=True)
+        # 筛选
+        screen = request.data["screen"]
+        # 搜索框
+        search = request.data["search"]
+        # global list
+        list = []
+
+        for i in queryset:
+            file = BookSerializer(i).data
+            list.append(file)
+
+        if len(screen) == 0 and len(search) == 0:
+            list = sorted(list, key=cmp_to_key(book_recommend_sort))
+
+        # 筛选
+        if len(screen) != 0:
+            temp = []
+            for i in list:
+                category = i["category"]
+                if screen in category:
+                    temp.append(i)
+            list = sorted(temp, key=cmp_to_key(book_recommend_sort))
+
+        # 搜索框
+        if len(search) != 0:
+            temp = []
+            for i in list:
+                if search == i["ISBN_num"] and (i not in temp):
+                    temp.append(i)
+                if search in i["fname"] and (i not in temp):
+                    temp.append(i)
+                if search in i["publisher"] and (i not in temp):
+                    temp.append(i)
+                if search in i["writer"] and (i not in temp):
+                    temp.append(i)
+                if search in i["content"] and (i not in temp):
+                    temp.append(i)
+            # 对查询结果计算相关度
+            for i in range(len(temp)):
+                if temp[i]["ISBN_num"] == search:
+                    relevancy = temp[i].get("relevancy", 0) + 200
+                    temp[i]["relevancy"] = relevancy
+                if temp[i]["fname"] == search:
+                    relevancy = temp[i].get("relevancy", 0) + 150
+                    temp[i]["relevancy"] = relevancy
+                elif search in temp[i]["fname"]:
+                    relevancy = temp[i].get("relevancy", 0) + 80
+                    temp[i]["relevancy"] = relevancy
+                if temp[i]["writer"] == search:
+                    relevancy = temp[i].get("relevancy", 0) + 120
+                    temp[i]["relevancy"] = relevancy
+                elif search in temp[i]["writer"]:
+                    relevancy = temp[i].get("relevancy", 0) + 60
+                    temp[i]["relevancy"] = relevancy
+                if temp[i]["publisher"] == search:
+                    relevancy = temp[i].get("relevancy", 0) + 80
+                    temp[i]["relevancy"] = relevancy
+                elif search in temp[i]["publisher"]:
+                    relevancy = temp[i].get("relevancy", 0) + 50
+                    temp[i]["relevancy"] = relevancy
+                if temp[i]["content"] == search:
+                    relevancy = temp[i].get("relevancy", 0) + 60
+                    temp[i]["relevancy"] = relevancy
+                elif search in temp[i]["content"]:
+                    relevancy = temp[i].get("relevancy", 0) + 20
+                    temp[i]["relevancy"] = relevancy
+            list = temp
+            list = sorted(list, key=lambda x: x["relevancy"], reverse=True)
+
         return Response(list)
