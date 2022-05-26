@@ -156,6 +156,8 @@ def daily_recommend_sort(x, y):
 
 # 获取每日推荐书籍
 class DailyRecommendView(APIView):
+    authentication_classes = []
+    permission_classes = []
     def get(self, request):
         query_set = DailyInfo.objects.all()
         # 如果数据库内为空
@@ -328,7 +330,8 @@ def book_recommend_sort(x, y):
 
 # # 搜索查询书籍
 class SearchBookView(APIView):
-
+    authentication_classes = []
+    permission_classes = []
     def get(self, request):
         queryset = FileInfo.objects.filter(isvalid=True)
         # 筛选
