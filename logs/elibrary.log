@@ -10302,3 +10302,129 @@ WARNING 2022-05-24 21:04:09,998 log 224 Bad Request: /register/
 WARNING 2022-05-24 21:04:09,999 basehttp 161 "POST /register/ HTTP/1.1" 400 70
 WARNING 2022-05-24 21:04:16,284 log 224 Bad Request: /register/
 WARNING 2022-05-24 21:04:16,284 basehttp 161 "POST /register/ HTTP/1.1" 400 35
+INFO 2022-05-26 09:06:00,201 autoreload 637 Watching for file changes with StatReloader
+WARNING 2022-05-26 09:06:04,744 log 224 Bad Request: /register/
+WARNING 2022-05-26 09:06:04,744 basehttp 161 "POST /register/ HTTP/1.1" 400 35
+INFO 2022-05-26 09:06:10,859 basehttp 161 "POST /register/ HTTP/1.1" 201 252
+INFO 2022-05-26 09:06:40,346 basehttp 161 "POST /login/ HTTP/1.1" 200 273
+ERROR 2022-05-26 09:08:07,586 log 224 Internal Server Error: /books/
+Traceback (most recent call last):
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\request.py", line 74, in wrap_attributeerrors
+    yield
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\request.py", line 227, in user
+    self._authenticate()
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\request.py", line 380, in _authenticate
+    user_auth_tuple = authenticator.authenticate(self)
+AttributeError: 'OrderingFilter' object has no attribute 'authenticate'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 497, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 414, in initial
+    self.perform_authentication(request)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 324, in perform_authentication
+    request.user
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\request.py", line 227, in user
+    self._authenticate()
+  File "D:\anaconda3\envs\django_new\lib\contextlib.py", line 131, in __exit__
+    self.gen.throw(type, value, traceback)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\request.py", line 78, in wrap_attributeerrors
+    raise exc.with_traceback(info[2])
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\request.py", line 74, in wrap_attributeerrors
+    yield
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\request.py", line 227, in user
+    self._authenticate()
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\request.py", line 380, in _authenticate
+    user_auth_tuple = authenticator.authenticate(self)
+rest_framework.request.WrappedAttributeError: 'OrderingFilter' object has no attribute 'authenticate'
+ERROR 2022-05-26 09:08:07,588 basehttp 161 "POST /books/ HTTP/1.1" 500 132804
+INFO 2022-05-26 09:08:19,870 basehttp 161 "POST /books/ HTTP/1.1" 200 25
+WARNING 2022-05-26 09:09:27,397 log 224 Unauthorized: /books/
+INFO 2022-05-31 18:58:26,198 autoreload 637 Watching for file changes with StatReloader
+ERROR 2022-05-31 18:58:50,281 log 224 Internal Server Error: /
+Traceback (most recent call last):
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\request.py", line 74, in wrap_attributeerrors
+    yield
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\request.py", line 227, in user
+    self._authenticate()
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\request.py", line 380, in _authenticate
+    user_auth_tuple = authenticator.authenticate(self)
+AttributeError: 'OrderingFilter' object has no attribute 'authenticate'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 497, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 414, in initial
+    self.perform_authentication(request)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 324, in perform_authentication
+    request.user
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\request.py", line 227, in user
+    self._authenticate()
+  File "D:\anaconda3\envs\django_new\lib\contextlib.py", line 131, in __exit__
+    self.gen.throw(type, value, traceback)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\request.py", line 78, in wrap_attributeerrors
+    raise exc.with_traceback(info[2])
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\request.py", line 74, in wrap_attributeerrors
+    yield
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\request.py", line 227, in user
+    self._authenticate()
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\request.py", line 380, in _authenticate
+    user_auth_tuple = authenticator.authenticate(self)
+rest_framework.request.WrappedAttributeError: 'OrderingFilter' object has no attribute 'authenticate'
+ERROR 2022-05-31 18:58:50,283 basehttp 161 "GET / HTTP/1.1" 500 132493
+WARNING 2022-05-31 18:59:05,272 log 224 Not Found: /media/img1/default.jpg
+WARNING 2022-05-31 18:59:05,273 basehttp 161 "GET /media/img1/default.jpg HTTP/1.1" 404 7075
+WARNING 2022-05-31 18:59:37,659 log 224 Not Found: /img1/default.jpg
+WARNING 2022-05-31 18:59:37,659 basehttp 161 "GET /img1/default.jpg HTTP/1.1" 404 7057
+WARNING 2022-05-31 19:00:42,746 log 224 Not Found: /media/img1/default.jpg/
+WARNING 2022-05-31 19:00:42,747 basehttp 161 "GET /media/img1/default.jpg/ HTTP/1.1" 404 7078
+INFO 2022-05-31 19:04:23,893 autoreload 251 D:\django project\Elibrary\Elibrary\urls.py changed, reloading.
+INFO 2022-05-31 19:04:24,823 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-05-31 19:04:41,694 autoreload 251 D:\django project\Elibrary\Elibrary\urls.py changed, reloading.
+INFO 2022-05-31 19:04:42,593 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-05-31 19:05:20,357 autoreload 251 D:\django project\Elibrary\Elibrary\urls.py changed, reloading.
+INFO 2022-05-31 19:05:21,251 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-05-31 19:05:35,857 autoreload 637 Watching for file changes with StatReloader
+WARNING 2022-05-31 19:05:41,341 log 224 Not Found: /media/img1/default.jpg/
+WARNING 2022-05-31 19:05:41,341 basehttp 161 "GET /media/img1/default.jpg/ HTTP/1.1" 404 7203
+INFO 2022-05-31 19:06:02,225 autoreload 637 Watching for file changes with StatReloader
+WARNING 2022-05-31 19:06:04,200 log 224 Not Found: /media/img1/default.jpg/
+WARNING 2022-05-31 19:06:04,201 basehttp 161 "GET /media/img1/default.jpg/ HTTP/1.1" 404 7402
+INFO 2022-05-31 19:06:37,906 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-05-31 19:07:05,239 autoreload 637 Watching for file changes with StatReloader
+WARNING 2022-05-31 19:07:06,539 log 224 Not Found: /media/img1/default.jpg/
+WARNING 2022-05-31 19:07:06,540 basehttp 161 "GET /media/img1/default.jpg/ HTTP/1.1" 404 7402
+INFO 2022-05-31 19:08:42,719 basehttp 161 "GET /media/img2/default.jpg/ HTTP/1.1" 200 9844
+INFO 2022-05-31 19:09:13,081 basehttp 161 "GET /media/img1/default.jpg/ HTTP/1.1" 200 2385
