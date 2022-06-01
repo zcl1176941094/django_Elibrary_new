@@ -39,7 +39,12 @@ class BookViews(APIView):
         count += 1
         request.data["fid"] = count
         # print(request.data)
-        serializer = BookSerializer(data=request.data)
+        data = request.data
+
+        for key,value in data.items():
+            if value == "":
+                del data[key]
+        serializer = BookSerializer(data=data)
         serializer.is_valid(raise_exception=True)
         serializer.save()
 

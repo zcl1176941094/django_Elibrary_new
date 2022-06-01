@@ -9,7 +9,7 @@ from rest_framework import serializers
 class BookSerializer(serializers.Serializer):
     fid = serializers.IntegerField(label="文件编号")
     fname = serializers.CharField(max_length=50, label="文件名称")
-    writer = serializers.CharField(max_length=30, label="作者")
+    writer = serializers.CharField(max_length=30, label="作者",default="佚名")
     # uploader = serializers.IntegerField(label="上传人")
     uploader = serializers.PrimaryKeyRelatedField(label="上传人", queryset=UserInfo.objects.all())
     ave_score = serializers.DecimalField(max_digits=5, decimal_places=2, default=0, label="评分")
@@ -18,14 +18,14 @@ class BookSerializer(serializers.Serializer):
     collection_times = serializers.IntegerField(default=0, label="收藏次数")
     f_fees = serializers.IntegerField(default=0, label="消耗积分")
     #  #文件地址
-    file = serializers.FileField(label="文件地址")
-    publisher = serializers.CharField(max_length=40, label="出版社")
-    ISBN_num = serializers.CharField(max_length=40, label="ISBN码")
+    file = serializers.FileField(label="文件地址",required=True)
+    publisher = serializers.CharField(max_length=40, label="出版社",default="未知")
+    ISBN_num = serializers.CharField(max_length=40, label="ISBN码",default="")
     category = serializers.CharField(max_length=40, label="类别")
-    content = serializers.CharField(label="简介")
+    content = serializers.CharField(label="简介",default="暂无")
     isvalid = serializers.BooleanField(default=True, label="是否有效")
     # 文件头像
-    file_photo = serializers.ImageField(label="书籍头像")
+    file_photo = serializers.ImageField(label="书籍头像",default='img2/default.jpg')
 
     class Meta:
         model = FileInfo
