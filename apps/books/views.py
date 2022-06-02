@@ -1,6 +1,4 @@
 import datetime
-import os
-import uuid
 from functools import cmp_to_key
 
 from django.http import FileResponse
@@ -42,23 +40,13 @@ class BookViews(APIView):
         request.data["fid"] = count
         # print(request.data)
         data = request.data
-        file = data["file"]
-        del data["file"]
+
         for key,value in data.items():
             if value == "":
                 del data[key]
         serializer = BookSerializer(data=data)
         serializer.is_valid(raise_exception=True)
         serializer.save()
-        File = FileInfo.objects.filter(fid=count)
-
-        file_name = 'files/' + str(request.user.username) + '/' + '{}.{}'.format(uuid.uuid4().hex[:8], file.name.split('.')[-1])
-        File.update(file=file_name)
-
-        if not os.path.exists('media/files/' + str(request.user.username) + '/'):
-            os.mkdir('media/files/' + str(request.user.username) + '/')
-        with open('media/' + file_name, 'wb+') as f:
-            f.write(file.read())
 
         return Response({'msg': '上传成功！'})
 
@@ -66,7 +54,7 @@ class BookViews(APIView):
 # 下载书籍
 class BookGetView(ModelViewSet):
     queryset = FileInfo.objects.all()
-    serializer_class = BasicBookInfo
+    serializer_class = BookSerializer
 
     @action(methods=['get', 'post'], detail=True)
     def download(self, request, pk=None, *args, **kwargs):
