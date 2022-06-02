@@ -10557,3 +10557,249 @@ INFO 2022-06-01 11:05:50,163 basehttp 161 "POST /books/ HTTP/1.1" 200 25
 WARNING 2022-06-01 11:06:04,470 log 224 Bad Request: /books/
 WARNING 2022-06-01 11:06:04,471 basehttp 161 "POST /books/ HTTP/1.1" 400 40
 INFO 2022-06-01 11:06:13,737 basehttp 161 "POST /books/ HTTP/1.1" 200 25
+INFO 2022-06-02 10:09:35,031 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-06-02 10:09:37,148 basehttp 161 "POST /books/ HTTP/1.1" 200 25
+INFO 2022-06-02 10:41:12,255 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-06-02 11:07:22,787 autoreload 637 Watching for file changes with StatReloader
+WARNING 2022-06-02 11:07:25,867 log 224 Unauthorized: /books/
+INFO 2022-06-02 11:07:46,840 basehttp 161 "POST /register/ HTTP/1.1" 201 259
+INFO 2022-06-02 11:07:59,178 basehttp 161 "POST /books/ HTTP/1.1" 200 25
+INFO 2022-06-02 11:11:19,384 autoreload 251 D:\django project\Elibrary\apps\books\views.py changed, reloading.
+INFO 2022-06-02 11:11:20,264 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-06-02 11:11:26,144 basehttp 161 "POST /books/ HTTP/1.1" 200 25
+INFO 2022-06-02 11:11:39,504 autoreload 251 D:\django project\Elibrary\apps\books\views.py changed, reloading.
+INFO 2022-06-02 11:11:40,377 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-06-02 11:11:43,316 basehttp 161 "POST /books/ HTTP/1.1" 200 25
+INFO 2022-06-02 11:13:10,645 autoreload 251 D:\django project\Elibrary\apps\books\views.py changed, reloading.
+INFO 2022-06-02 11:13:11,494 autoreload 637 Watching for file changes with StatReloader
+ERROR 2022-06-02 11:13:20,340 log 224 Internal Server Error: /books/
+Traceback (most recent call last):
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\django project\Elibrary\apps\books\views.py", line 57, in post
+    filepath = file_save_path(tempfile,file)
+  File "D:\django project\Elibrary\apps\books\views.py", line 31, in file_save_path
+    ext = filename.split('.')[-1]
+AttributeError: 'TemporaryUploadedFile' object has no attribute 'split'
+ERROR 2022-06-02 11:13:20,342 basehttp 161 "POST /books/ HTTP/1.1" 500 98854
+INFO 2022-06-02 11:14:38,348 autoreload 251 D:\django project\Elibrary\apps\books\views.py changed, reloading.
+INFO 2022-06-02 11:14:39,215 autoreload 637 Watching for file changes with StatReloader
+ERROR 2022-06-02 11:14:42,097 log 224 Internal Server Error: /books/
+Traceback (most recent call last):
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\django project\Elibrary\apps\books\views.py", line 57, in post
+    filepath = file_save_path(tempfile,file.name)
+  File "D:\django project\Elibrary\apps\books\views.py", line 33, in file_save_path
+    return os.path.join("files", instance.uploader.username, filename)
+AttributeError: 'QuerySet' object has no attribute 'uploader'
+ERROR 2022-06-02 11:14:42,098 basehttp 161 "POST /books/ HTTP/1.1" 500 98968
+INFO 2022-06-02 11:15:14,935 autoreload 251 D:\django project\Elibrary\apps\books\views.py changed, reloading.
+INFO 2022-06-02 11:15:15,827 autoreload 637 Watching for file changes with StatReloader
+ERROR 2022-06-02 11:15:18,021 log 224 Internal Server Error: /books/
+Traceback (most recent call last):
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\django project\Elibrary\apps\books\views.py", line 58, in post
+    filepath = file_save_path(tempfile,file.name)
+  File "D:\django project\Elibrary\apps\books\views.py", line 33, in file_save_path
+    return os.path.join("files", instance.uploader.username, filename)
+AttributeError: 'QuerySet' object has no attribute 'uploader'
+ERROR 2022-06-02 11:15:18,023 basehttp 161 "POST /books/ HTTP/1.1" 500 98953
+INFO 2022-06-02 11:15:48,451 autoreload 251 D:\django project\Elibrary\apps\books\views.py changed, reloading.
+INFO 2022-06-02 11:15:49,330 autoreload 637 Watching for file changes with StatReloader
+ERROR 2022-06-02 11:15:52,255 log 224 Internal Server Error: /books/
+Traceback (most recent call last):
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\django project\Elibrary\apps\books\views.py", line 57, in post
+    print(tempfile.uploader)
+AttributeError: 'QuerySet' object has no attribute 'uploader'
+ERROR 2022-06-02 11:15:52,257 basehttp 161 "POST /books/ HTTP/1.1" 500 95018
+INFO 2022-06-02 11:19:00,620 autoreload 251 D:\django project\Elibrary\apps\books\views.py changed, reloading.
+INFO 2022-06-02 11:19:01,458 autoreload 637 Watching for file changes with StatReloader
+ERROR 2022-06-02 11:19:05,301 log 224 Internal Server Error: /books/
+Traceback (most recent call last):
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\django project\Elibrary\apps\books\views.py", line 59, in post
+    print(file.split("."))
+AttributeError: 'TemporaryUploadedFile' object has no attribute 'split'
+ERROR 2022-06-02 11:19:05,302 basehttp 161 "POST /books/ HTTP/1.1" 500 95064
+INFO 2022-06-02 11:19:26,900 autoreload 251 D:\django project\Elibrary\apps\books\views.py changed, reloading.
+INFO 2022-06-02 11:19:27,797 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-06-02 11:19:30,067 basehttp 161 "POST /books/ HTTP/1.1" 200 25
+INFO 2022-06-02 11:23:03,786 autoreload 251 D:\django project\Elibrary\apps\books\views.py changed, reloading.
+INFO 2022-06-02 11:23:04,786 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-06-02 11:23:06,793 basehttp 161 "POST /books/ HTTP/1.1" 200 25
+INFO 2022-06-02 11:26:11,036 autoreload 251 D:\django project\Elibrary\apps\books\views.py changed, reloading.
+INFO 2022-06-02 11:26:11,884 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-06-02 11:27:30,987 basehttp 161 "GET /book_get/1/download/ HTTP/1.1" 200 6660040
+ERROR 2022-06-02 11:28:11,991 log 224 Internal Server Error: /book_get/1/download/
+Traceback (most recent call last):
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\request.py", line 74, in wrap_attributeerrors
+    yield
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\request.py", line 227, in user
+    self._authenticate()
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\request.py", line 380, in _authenticate
+    user_auth_tuple = authenticator.authenticate(self)
+AttributeError: 'OrderingFilter' object has no attribute 'authenticate'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 497, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 414, in initial
+    self.perform_authentication(request)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 324, in perform_authentication
+    request.user
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\request.py", line 227, in user
+    self._authenticate()
+  File "D:\anaconda3\envs\django_new\lib\contextlib.py", line 131, in __exit__
+    self.gen.throw(type, value, traceback)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\request.py", line 78, in wrap_attributeerrors
+    raise exc.with_traceback(info[2])
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\request.py", line 74, in wrap_attributeerrors
+    yield
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\request.py", line 227, in user
+    self._authenticate()
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\request.py", line 380, in _authenticate
+    user_auth_tuple = authenticator.authenticate(self)
+rest_framework.request.WrappedAttributeError: 'OrderingFilter' object has no attribute 'authenticate'
+ERROR 2022-06-02 11:28:11,993 basehttp 161 "GET /book_get/1/download/ HTTP/1.1" 500 133788
+INFO 2022-06-02 11:28:48,957 autoreload 251 D:\django project\Elibrary\apps\books\views.py changed, reloading.
+INFO 2022-06-02 11:28:49,835 autoreload 637 Watching for file changes with StatReloader
+ERROR 2022-06-02 11:28:53,736 log 224 Internal Server Error: /book_get/1/download/
+Traceback (most recent call last):
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\fields.py", line 457, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\fields.py", line 97, in get_attribute
+    instance = getattr(instance, attr)
+AttributeError: 'AnonymousUser' object has no attribute 'nickname'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\django project\Elibrary\apps\books\views.py", line 78, in download
+    data = serializer.data
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\serializers.py", line 555, in data
+    ret = super().data
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\serializers.py", line 509, in to_representation
+    attribute = field.get_attribute(instance)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\fields.py", line 490, in get_attribute
+    raise type(exc)(msg)
+AttributeError: Got AttributeError when attempting to get a value for field `nickname` on serializer `UserInfoSerializer`.
+The serializer field might be named incorrectly and not match any attribute or key on the `AnonymousUser` instance.
+Original exception text was: 'AnonymousUser' object has no attribute 'nickname'.
+ERROR 2022-06-02 11:28:53,736 basehttp 161 "GET /book_get/1/download/ HTTP/1.1" 500 123481
+INFO 2022-06-02 11:30:02,475 autoreload 251 D:\django project\Elibrary\apps\books\views.py changed, reloading.
+INFO 2022-06-02 11:30:03,385 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-06-02 11:31:17,608 autoreload 251 D:\django project\Elibrary\apps\books\views.py changed, reloading.
+INFO 2022-06-02 11:31:18,505 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-06-02 11:36:38,510 basehttp 161 "POST /register/ HTTP/1.1" 201 256
+INFO 2022-06-02 11:37:33,320 basehttp 161 "POST /book_get/1/download/ HTTP/1.1" 200 6660040
+INFO 2022-06-02 11:40:23,836 autoreload 251 D:\django project\Elibrary\apps\books\views.py changed, reloading.
+INFO 2022-06-02 11:40:24,895 autoreload 637 Watching for file changes with StatReloader

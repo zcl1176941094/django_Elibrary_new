@@ -18,18 +18,20 @@ class BookSerializer(serializers.Serializer):
     collection_times = serializers.IntegerField(default=0, label="收藏次数")
     f_fees = serializers.IntegerField(default=0, label="消耗积分")
     #  #文件地址
-    file = serializers.FileField(label="文件地址",required=True)
+    # file = serializers.FileField(label="文件地址",required=True)
     publisher = serializers.CharField(max_length=40, label="出版社",default="未知")
     ISBN_num = serializers.CharField(max_length=40, label="ISBN码",default="")
     category = serializers.CharField(max_length=40, label="类别")
     content = serializers.CharField(label="简介",default="暂无")
     isvalid = serializers.BooleanField(default=True, label="是否有效")
     # 文件头像
-    file_photo = serializers.ImageField(label="书籍头像",default='img2/default.jpg')
+    # file_photo = serializers.ImageField(label="书籍头像",default='img2/default.jpg')
 
     class Meta:
         model = FileInfo
-        fields = '__all__'
+        # fields = '__all__'
+        fields = ("fid","fname","writer","uploader","ave_score","comment_times","download_times",
+                  "collection_times","f_fees","publisher","ISBN_num","category","content","isvalid")
 
     def create(self, validated_data):
         # print(validated_data)
