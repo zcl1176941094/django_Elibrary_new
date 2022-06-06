@@ -8,6 +8,8 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework.viewsets import ModelViewSet
 from rest_framework_jwt.settings import api_settings
+
+from books.views import BooksPagination
 from user.serializers import UserRegSerializer, UserInfoSerializer, UserPhotoSerializer
 from user.models import UserToken, UserInfo, Download, FileInfo, Collection
 from books.serializers import BasicBookInfo
@@ -140,6 +142,8 @@ class GetDownloadsView(APIView):
             data.append(temp_data)
         data = sorted(data,key=lambda x:x["download_time"])
         data.reverse()
+        page_obj = BooksPagination()
+        data = page_obj.paginate_queryset(data, request=request, view=self)
         return Response(data)
 
 

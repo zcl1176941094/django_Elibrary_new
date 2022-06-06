@@ -29,7 +29,7 @@ class BooksPagination(PageNumberPagination):
 # Create your views here.
 # 上传书籍
 class BookViews(APIView):
-
+    # 上传书籍
     def post(self, request):
         # userSerializer = UserInfoSerializer(request.user)
         # username = userSerializer.data["username"]
@@ -49,6 +49,19 @@ class BookViews(APIView):
         serializer.save()
 
         return Response({'msg': '上传成功！'})
+
+    # 获取用户上传书籍
+    def get(self,request):
+        user = request.user
+        data = FileInfo.objects.filter(uploader=user.username)
+        if(len(data)>0):
+            list = BookSerializer(data=data,many=True)
+            page_obj = BooksPagination()
+            list = page_obj.paginate_queryset(list, request=request, view=self)
+        else:
+            list=[]
+        return Response(list)
+
 
 
 # 下载书籍
@@ -99,6 +112,7 @@ class CancelCollectionView(APIView):
         return Response({"msg": "取消收藏成功!"})
 
 
+
 # 书籍封禁
 class BanBookView(APIView):
     def get(self, request, pk=None):
@@ -120,13 +134,16 @@ class CommentView(APIView):
     # 获取书籍的评论
     def get(self, request, pk=None):
         comments = Comment.objects.filter(fid=pk)
-        list = BookCommentSerializer(comments,many=True).data
+        if len(comments) > 0:
+            list = BookCommentSerializer(comments,many=True).data
 
-        # 按照时间逆序排序（越靠近现在的先输出）
-        list = sorted(list, key=lambda x: x["stime"])
-        list.reverse()
-        page_obj = BooksPagination()
-        list = page_obj.paginate_queryset(list,request=request,view=self)
+            # 按照时间逆序排序（越靠近现在的先输出）
+            list = sorted(list, key=lambda x: x["stime"])
+            list.reverse()
+            page_obj = BooksPagination()
+            list = page_obj.paginate_queryset(list,request=request,view=self)
+        else:
+            list = []
         return Response(list)
 
     # 对书籍评论

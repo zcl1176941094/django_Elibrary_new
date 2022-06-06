@@ -1,5 +1,6 @@
 from django.urls import path
 from user import views
+from books.views import BookViews
 from rest_framework_jwt.views import obtain_jwt_token
 from rest_framework import routers
 
@@ -11,6 +12,7 @@ urlpatterns = [
     path('commonupdate/', views.CommonUpdateUserView.as_view()),  # 更新连续登录和积分信息
     path('downloads/',views.GetDownloadsView.as_view()), # 获取下载历史
     path('collections/',views.CollectionView.as_view()), # 获取收藏记录
+    path('posthistory/', BookViews.as_view()),  # 获取用户上传书籍
 ]
 
 # routers = routers.DefaultRouter()

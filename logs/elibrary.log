@@ -10864,3 +10864,80 @@ INFO 2022-06-02 12:19:16,223 autoreload 251 D:\django project\Elibrary\apps\book
 INFO 2022-06-02 12:19:17,088 autoreload 637 Watching for file changes with StatReloader
 INFO 2022-06-02 12:21:31,303 autoreload 251 D:\django project\Elibrary\apps\books\views.py changed, reloading.
 INFO 2022-06-02 12:21:32,180 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-06-06 22:31:47,776 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-06-06 22:32:19,707 basehttp 161 "POST /register/ HTTP/1.1" 201 259
+INFO 2022-06-06 22:33:08,609 basehttp 161 "POST /report/1/ HTTP/1.1" 200 25
+INFO 2022-06-06 23:13:31,350 autoreload 251 D:\django project\Elibrary\apps\books\views.py changed, reloading.
+INFO 2022-06-06 23:13:32,743 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-06-06 23:14:51,630 autoreload 251 D:\django project\Elibrary\apps\books\views.py changed, reloading.
+INFO 2022-06-06 23:14:52,695 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-06-06 23:15:33,207 autoreload 251 D:\django project\Elibrary\apps\books\urls.py changed, reloading.
+INFO 2022-06-06 23:15:34,191 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-06-06 23:18:31,357 autoreload 251 D:\django project\Elibrary\apps\books\urls.py changed, reloading.
+INFO 2022-06-06 23:18:32,408 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-06-06 23:20:05,667 autoreload 251 D:\django project\Elibrary\apps\books\views.py changed, reloading.
+INFO 2022-06-06 23:20:06,652 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-06-06 23:21:59,769 autoreload 251 D:\django project\Elibrary\apps\books\views.py changed, reloading.
+INFO 2022-06-06 23:22:00,853 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-06-06 23:22:26,838 autoreload 251 D:\django project\Elibrary\apps\books\views.py changed, reloading.
+INFO 2022-06-06 23:22:27,922 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-06-06 23:23:34,580 autoreload 251 D:\django project\Elibrary\apps\books\views.py changed, reloading.
+INFO 2022-06-06 23:23:35,662 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-06-06 23:26:14,020 autoreload 251 D:\django project\Elibrary\apps\books\views.py changed, reloading.
+INFO 2022-06-06 23:26:15,028 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-06-06 23:27:02,855 autoreload 251 D:\django project\Elibrary\apps\user\views.py changed, reloading.
+INFO 2022-06-06 23:27:03,830 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-06-06 23:28:01,019 autoreload 251 D:\django project\Elibrary\apps\user\views.py changed, reloading.
+INFO 2022-06-06 23:28:02,094 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-06-06 23:29:05,930 autoreload 251 D:\django project\Elibrary\apps\books\views.py changed, reloading.
+INFO 2022-06-06 23:29:07,046 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-06-06 23:29:48,997 autoreload 251 D:\django project\Elibrary\apps\user\views.py changed, reloading.
+INFO 2022-06-06 23:29:50,128 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-06-06 23:32:30,480 autoreload 251 D:\django project\Elibrary\apps\books\urls.py changed, reloading.
+INFO 2022-06-06 23:32:31,501 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-06-06 23:33:24,921 autoreload 251 D:\django project\Elibrary\apps\user\urls.py changed, reloading.
+INFO 2022-06-06 23:33:25,800 autoreload 637 Watching for file changes with StatReloader
+WARNING 2022-06-06 23:33:34,457 log 224 Bad Request: /register/
+WARNING 2022-06-06 23:33:34,466 basehttp 161 "POST /register/ HTTP/1.1" 400 35
+INFO 2022-06-06 23:33:41,399 basehttp 161 "POST /login/ HTTP/1.1" 200 280
+ERROR 2022-06-06 23:35:27,862 log 224 Internal Server Error: /posthistory/
+Traceback (most recent call last):
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\django project\Elibrary\apps\books\views.py", line 59, in get
+    list = page_obj.paginate_queryset(list, request=request, view=self)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\pagination.py", line 204, in paginate_queryset
+    self.page = paginator.page(page_number)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\paginator.py", line 76, in page
+    number = self.validate_number(number)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\paginator.py", line 54, in validate_number
+    if number > self.num_pages:
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\utils\functional.py", line 48, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\paginator.py", line 103, in num_pages
+    if self.count == 0 and not self.allow_empty_first_page:
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\utils\functional.py", line 48, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\paginator.py", line 98, in count
+    return len(self.object_list)
+TypeError: object of type 'ListSerializer' has no len()
+ERROR 2022-06-06 23:35:27,871 basehttp 161 "GET /posthistory/ HTTP/1.1" 500 123150
+INFO 2022-06-06 23:37:09,469 autoreload 251 D:\django project\Elibrary\apps\books\views.py changed, reloading.
+INFO 2022-06-06 23:37:10,492 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-06-06 23:37:12,394 basehttp 161 "GET /posthistory/ HTTP/1.1" 200 2
+INFO 2022-06-06 23:39:20,155 autoreload 251 D:\django project\Elibrary\apps\books\views.py changed, reloading.
+INFO 2022-06-06 23:39:21,143 autoreload 637 Watching for file changes with StatReloader
