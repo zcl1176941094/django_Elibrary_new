@@ -10950,3 +10950,8 @@ INFO 2022-06-07 10:54:57,725 autoreload 637 Watching for file changes with StatR
 INFO 2022-06-07 10:55:42,890 autoreload 251 D:\django project\Elibrary\apps\books\views.py changed, reloading.
 INFO 2022-06-07 10:55:43,817 autoreload 637 Watching for file changes with StatReloader
 INFO 2022-06-07 22:26:09,825 autoreload 637 Watching for file changes with StatReloader
+WARNING 2022-06-07 22:26:26,299 log 224 Bad Request: /register/
+WARNING 2022-06-07 22:26:26,300 basehttp 161 "POST /register/ HTTP/1.1" 400 35
+INFO 2022-06-07 22:26:28,679 basehttp 161 "POST /register/ HTTP/1.1" 201 263
+INFO 2022-06-07 22:27:27,066 basehttp 161 "GET /collection/1/ HTTP/1.1" 200 23
+INFO 2022-06-07 22:27:28,016 basehttp 161 "GET /collection/1/ HTTP/1.1" 200 31
