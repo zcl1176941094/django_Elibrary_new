@@ -69,7 +69,7 @@ class BookViews(APIView):
             page_size = 10
         page_size = int(page_size)
         return Response(
-            {"data": list, "pageSum": math.ceil(len(list) / page_size), "pagesize": page_size, "sum": len(list)})
+            {"data": list, "pageSum": math.ceil(len(data) / page_size), "pagesize": page_size, "sum": len(data)})
 
 
 # 下载书籍
@@ -158,7 +158,7 @@ class CommentView(APIView):
         page_size = int(page_size)
 
         return Response(
-            {"data": list, "pageSum": math.ceil(len(list) / page_size), "pagesize": page_size, "sum": len(list)})
+            {"data": list, "pageSum": math.ceil(len(comments) / page_size), "pagesize": page_size, "sum": len(comments)})
 
     # 对书籍评论
     def post(self, request, pk=None):
@@ -220,7 +220,7 @@ class DailyRecommendView(APIView):
                 now = datetime.datetime.strptime(now, "%Y-%m-%d")
                 # 数据库内的内容是今天的内容
                 if daily_time == now:
-
+                    sum = len(books)
                     list = []
                     for i in books:
                         book = FileInfo.objects.get(fid=i.fid.fid)
@@ -237,6 +237,7 @@ class DailyRecommendView(APIView):
                     list = sorted(list, key=cmp_to_key(daily_recommend_sort))
                     if len(list) >= 20:
                         list = list[:20]
+                    sum = len(list)
                     for i in range(len(list)):
                         DailyInfo.objects.create(did=(i + 1), fid=list[i])
                         list[i] = BasicBookInfo(list[i]).data
@@ -250,7 +251,7 @@ class DailyRecommendView(APIView):
             page_size = 10
         page_size = int(page_size)
         return Response(
-            {"data": list, "pageSum": math.ceil(len(list) / page_size), "pagesize": page_size, "sum": len(list)})
+            {"data": list, "pageSum": math.ceil(sum / page_size), "pagesize": page_size, "sum": sum})
 
 
 # 书籍举报类
@@ -275,7 +276,7 @@ class BookReportView(APIView):
             page_size = 10
         page_size = int(page_size)
         return Response(
-            {"data": list, "pageSum": math.ceil(len(list) / page_size), "pagesize": page_size, "sum": len(list)})
+            {"data": list, "pageSum": math.ceil(len(reported) / page_size), "pagesize": page_size, "sum": len(reported)})
 
     # 提交举报信息
     def post(self, request, pk=None):
@@ -319,7 +320,7 @@ class UndoBookReportView(APIView):
             page_size = 10
         page_size = int(page_size)
         return Response(
-            {"data": list, "pageSum": math.ceil(len(list) / page_size), "pagesize": page_size, "sum": len(list)})
+            {"data": list, "pageSum": math.ceil(len(reports) / page_size), "pagesize": page_size, "sum": len(reports)})
 
     # 处理举报信息
     def post(self, request, pk=None):
@@ -353,7 +354,7 @@ class DoneBookReportView(APIView):
             page_size = 10
         page_size = int(page_size)
         return Response(
-            {"data": list, "pageSum": math.ceil(len(list) / page_size), "pagesize": page_size, "sum": len(list)})
+            {"data": list, "pageSum": math.ceil(len(reports) / page_size), "pagesize": page_size, "sum": len(reports)})
 
 
 # 获取被举报违规信息
@@ -379,7 +380,7 @@ class ReportedView(APIView):
             page_size = 10
         page_size = int(page_size)
         return Response(
-            {"data": list, "pageSum": math.ceil(len(list) / page_size), "pagesize": page_size, "sum": len(list)})
+            {"data": list, "pageSum": math.ceil(len(reports) / page_size), "pagesize": page_size, "sum": len(reports)})
 
 
 def book_recommend_sort(x, y):
@@ -472,7 +473,7 @@ class SearchBookView(APIView):
             list = temp
             list = sorted(list, key=lambda x: x["relevancy"], reverse=True)
         # 数据分页
-
+        sum = len(list)
         page_obj = BooksPagination()
         list = page_obj.paginate_queryset(list, request=request, view=self)
 
@@ -481,4 +482,4 @@ class SearchBookView(APIView):
             page_size = 10
         page_size = int(page_size)
         return Response(
-            {"data": list, "pageSum": math.ceil(len(list) / page_size), "pagesize": page_size, "sum": len(list)})
+            {"data": list, "pageSum": math.ceil(sum / page_size), "pagesize": page_size, "sum": sum})
