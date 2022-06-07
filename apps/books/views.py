@@ -54,13 +54,22 @@ class BookViews(APIView):
     def get(self, request):
         user = request.user
         data = FileInfo.objects.filter(uploader=user.username)
+
         if (len(data) > 0):
-            list = BookSerializer(data=data, many=True)
+            list = []
+            for i in data:
+                list.append(BookSerializer(i).data)
+
             page_obj = BooksPagination()
             list = page_obj.paginate_queryset(list, request=request, view=self)
         else:
             list = []
-        return Response({"data": list, "pageSum": math.ceil(len(list) / 10), "pagesize": 10})
+        page_size = request.GET.get("page_size")
+        if not page_size:
+            page_size = 10
+        page_size = int(page_size)
+        return Response(
+            {"data": list, "pageSum": math.ceil(len(list) / page_size), "pagesize": page_size, "sum": len(list)})
 
 
 # 下载书籍
@@ -142,7 +151,14 @@ class CommentView(APIView):
             list = page_obj.paginate_queryset(list, request=request, view=self)
         else:
             list = []
-        return Response({"data": list, "pageSum": math.ceil(len(list) / 10), "pagesize": 10})
+
+        page_size = request.GET.get("page_size")
+        if not page_size:
+            page_size = 10
+        page_size = int(page_size)
+
+        return Response(
+            {"data": list, "pageSum": math.ceil(len(list) / page_size), "pagesize": page_size, "sum": len(list)})
 
     # 对书籍评论
     def post(self, request, pk=None):
@@ -228,7 +244,13 @@ class DailyRecommendView(APIView):
         # 数据分页
         page_obj = BooksPagination()
         list = page_obj.paginate_queryset(list, request=request, view=self)
-        return Response({"data": list, "pageSum": math.ceil(len(list) / 10), "pagesize": 10})
+
+        page_size = request.GET.get("page_size")
+        if not page_size:
+            page_size = 10
+        page_size = int(page_size)
+        return Response(
+            {"data": list, "pageSum": math.ceil(len(list) / page_size), "pagesize": page_size, "sum": len(list)})
 
 
 # 书籍举报类
@@ -247,7 +269,13 @@ class BookReportView(APIView):
         # 数据分页
         page_obj = BooksPagination()
         list = page_obj.paginate_queryset(list, request=request, view=self)
-        return Response({"data": list, "pageSum": math.ceil(len(list) / 10), "pagesize": 10})
+
+        page_size = request.GET.get("page_size")
+        if not page_size:
+            page_size = 10
+        page_size = int(page_size)
+        return Response(
+            {"data": list, "pageSum": math.ceil(len(list) / page_size), "pagesize": page_size, "sum": len(list)})
 
     # 提交举报信息
     def post(self, request, pk=None):
@@ -285,7 +313,13 @@ class UndoBookReportView(APIView):
         # 数据分页
         page_obj = BooksPagination()
         list = page_obj.paginate_queryset(list, request=request, view=self)
-        return Response({"data": list, "pageSum": math.ceil(len(list) / 10), "pagesize": 10})
+
+        page_size = request.GET.get("page_size")
+        if not page_size:
+            page_size = 10
+        page_size = int(page_size)
+        return Response(
+            {"data": list, "pageSum": math.ceil(len(list) / page_size), "pagesize": page_size, "sum": len(list)})
 
     # 处理举报信息
     def post(self, request, pk=None):
@@ -313,7 +347,13 @@ class DoneBookReportView(APIView):
         list.reverse()
         page_obj = BooksPagination()
         list = page_obj.paginate_queryset(list, request=request, view=self)
-        return Response({"data": list, "pageSum": math.ceil(len(list) / 10), "pagesize": 10})
+
+        page_size = request.GET.get("page_size")
+        if not page_size:
+            page_size = 10
+        page_size = int(page_size)
+        return Response(
+            {"data": list, "pageSum": math.ceil(len(list) / page_size), "pagesize": page_size, "sum": len(list)})
 
 
 # 获取被举报违规信息
@@ -333,7 +373,13 @@ class ReportedView(APIView):
         list.reverse()
         page_obj = BooksPagination()
         list = page_obj.paginate_queryset(list, request=request, view=self)
-        return Response({"data": list, "pageSum": math.ceil(len(list) / 10), "pagesize": 10})
+
+        page_size = request.GET.get("page_size")
+        if not page_size:
+            page_size = 10
+        page_size = int(page_size)
+        return Response(
+            {"data": list, "pageSum": math.ceil(len(list) / page_size), "pagesize": page_size, "sum": len(list)})
 
 
 def book_recommend_sort(x, y):
@@ -426,7 +472,13 @@ class SearchBookView(APIView):
             list = temp
             list = sorted(list, key=lambda x: x["relevancy"], reverse=True)
         # 数据分页
+
         page_obj = BooksPagination()
         list = page_obj.paginate_queryset(list, request=request, view=self)
 
-        return Response({"data": list, "pageSum": math.ceil(len(list) / 10), "pagesize": 10})
+        page_size = request.GET.get("page_size")
+        if not page_size:
+            page_size = 10
+        page_size = int(page_size)
+        return Response(
+            {"data": list, "pageSum": math.ceil(len(list) / page_size), "pagesize": page_size, "sum": len(list)})

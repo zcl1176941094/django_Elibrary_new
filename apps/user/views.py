@@ -21,6 +21,7 @@ import datetime
 class RegisterViews(APIView):
     authentication_classes = []
     permission_classes = []
+
     def post(self, request):
         # print(request.data)
         serializer = UserRegSerializer(data=request.data)
@@ -68,6 +69,7 @@ class UserInfoViews(APIView):
         serializer.save()
         return Response(data)
 
+
 # 用户头像
 class UserPhotoView(APIView):
     def get(self, request):
@@ -88,9 +90,6 @@ class UserPhotoView(APIView):
             f.write(photo.read())
 
         return Response({"msg": "ok"})
-
-
-
 
 
 # 更新连续登录天数和积分
@@ -141,11 +140,17 @@ class GetDownloadsView(APIView):
             temp_data = BasicBookInfo(i.fid).data
             temp_data["download_time"] = i.download_time
             data.append(temp_data)
-        data = sorted(data,key=lambda x:x["download_time"])
+        data = sorted(data, key=lambda x: x["download_time"])
         data.reverse()
         page_obj = BooksPagination()
         data = page_obj.paginate_queryset(data, request=request, view=self)
-        return Response({"data": data, "pageSum": math.ceil(len(list) / 10), "pagesize": 10})
+
+        page_size = request.GET.get("page_size")
+        if not page_size:
+            page_size = 10
+        page_size = int(page_size)
+        return Response(
+            {"data": data, "pageSum": math.ceil(len(data) / page_size), "pagesize": page_size, "sum": len(data)})
 
 
 # 获取收藏记录
@@ -160,4 +165,13 @@ class CollectionView(APIView):
             data.append(temp_data)
         data = sorted(data, key=lambda x: x["collect_time"])
         data.reverse()
-        return Response(data)
+
+        page_obj = BooksPagination()
+        data = page_obj.paginate_queryset(data, request=request, view=self)
+
+        page_size = request.GET.get("page_size")
+        if not page_size:
+            page_size = 10
+        page_size = int(page_size)
+        return Response(
+            {"data": data, "pageSum": math.ceil(len(data) / page_size), "pagesize": page_size, "sum": len(data)})
