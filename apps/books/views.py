@@ -103,10 +103,14 @@ class BookCollectionView(APIView):
     def get(self, request, pk=None):
         user = request.user
         file = FileInfo.objects.get(fid=pk)
-        collection_times = file.collection_times + 1
-        FileInfo.objects.filter(fid=pk).update(collection_times=collection_times)
-        Collection.objects.create(fid=file, userid=user)
-        return Response({"msg": "收藏成功!"})
+        temp = Collection.objects.filter(fid=pk, userid=user.username)
+        if not temp:
+            collection_times = file.collection_times + 1
+            FileInfo.objects.filter(fid=pk).update(collection_times=collection_times)
+            Collection.objects.create(fid=file, userid=user)
+            return Response({"msg": "收藏成功!"})
+        else:
+            return Response({"msg": "已收藏该书籍！"})
 
 
 # 取消收藏书籍
@@ -158,7 +162,8 @@ class CommentView(APIView):
         page_size = int(page_size)
 
         return Response(
-            {"data": list, "pageSum": math.ceil(len(comments) / page_size), "pagesize": page_size, "sum": len(comments)})
+            {"data": list, "pageSum": math.ceil(len(comments) / page_size), "pagesize": page_size,
+             "sum": len(comments)})
 
     # 对书籍评论
     def post(self, request, pk=None):
@@ -276,7 +281,8 @@ class BookReportView(APIView):
             page_size = 10
         page_size = int(page_size)
         return Response(
-            {"data": list, "pageSum": math.ceil(len(reported) / page_size), "pagesize": page_size, "sum": len(reported)})
+            {"data": list, "pageSum": math.ceil(len(reported) / page_size), "pagesize": page_size,
+             "sum": len(reported)})
 
     # 提交举报信息
     def post(self, request, pk=None):
