@@ -1,3 +1,4 @@
+import math
 import os
 import uuid
 
@@ -144,7 +145,7 @@ class GetDownloadsView(APIView):
         data.reverse()
         page_obj = BooksPagination()
         data = page_obj.paginate_queryset(data, request=request, view=self)
-        return Response(data)
+        return Response({"data": data, "pageSum": math.ceil(len(list) / 10), "pagesize": 10})
 
 
 # 获取收藏记录
