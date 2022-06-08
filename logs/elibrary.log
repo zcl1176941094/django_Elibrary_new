@@ -10955,3 +10955,222 @@ WARNING 2022-06-07 22:26:26,300 basehttp 161 "POST /register/ HTTP/1.1" 400 35
 INFO 2022-06-07 22:26:28,679 basehttp 161 "POST /register/ HTTP/1.1" 201 263
 INFO 2022-06-07 22:27:27,066 basehttp 161 "GET /collection/1/ HTTP/1.1" 200 23
 INFO 2022-06-07 22:27:28,016 basehttp 161 "GET /collection/1/ HTTP/1.1" 200 31
+INFO 2022-06-08 08:59:59,072 autoreload 637 Watching for file changes with StatReloader
+ERROR 2022-06-08 09:03:35,079 log 224 Internal Server Error: /books/
+Traceback (most recent call last):
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\django project\Elibrary\apps\books\views.py", line 44, in post
+    for key, value in data.items():
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\utils\datastructures.py", line 176, in items
+    for key in self:
+RuntimeError: dictionary changed size during iteration
+ERROR 2022-06-08 09:03:35,081 basehttp 161 "POST /books/ HTTP/1.1" 500 97392
+INFO 2022-06-08 09:05:28,491 autoreload 251 D:\django project\Elibrary\apps\books\views.py changed, reloading.
+INFO 2022-06-08 09:05:29,363 autoreload 637 Watching for file changes with StatReloader
+ERROR 2022-06-08 09:05:35,686 log 224 Internal Server Error: /books/
+Traceback (most recent call last):
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\django project\Elibrary\apps\books\views.py", line 44, in post
+    for key, value in data.items():
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\utils\datastructures.py", line 176, in items
+    for key in self:
+RuntimeError: dictionary changed size during iteration
+ERROR 2022-06-08 09:05:35,686 basehttp 161 "POST /books/ HTTP/1.1" 500 98003
+INFO 2022-06-08 09:06:53,979 autoreload 251 D:\django project\Elibrary\apps\books\views.py changed, reloading.
+INFO 2022-06-08 09:06:54,897 autoreload 637 Watching for file changes with StatReloader
+ERROR 2022-06-08 09:06:59,910 log 224 Internal Server Error: /books/
+Traceback (most recent call last):
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\django project\Elibrary\apps\books\views.py", line 43, in post
+    temp = data.copy()
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\http\request.py", line 571, in copy
+    return self.__deepcopy__({})
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\http\request.py", line 532, in __deepcopy__
+    result.setlist(copy.deepcopy(key, memo), copy.deepcopy(value, memo))
+  File "D:\anaconda3\envs\django_new\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "D:\anaconda3\envs\django_new\lib\copy.py", line 205, in _deepcopy_list
+    append(deepcopy(a, memo))
+  File "D:\anaconda3\envs\django_new\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "D:\anaconda3\envs\django_new\lib\copy.py", line 270, in _reconstruct
+    state = deepcopy(state, memo)
+  File "D:\anaconda3\envs\django_new\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "D:\anaconda3\envs\django_new\lib\copy.py", line 230, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "D:\anaconda3\envs\django_new\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "D:\anaconda3\envs\django_new\lib\copy.py", line 270, in _reconstruct
+    state = deepcopy(state, memo)
+  File "D:\anaconda3\envs\django_new\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "D:\anaconda3\envs\django_new\lib\copy.py", line 230, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "D:\anaconda3\envs\django_new\lib\copy.py", line 161, in deepcopy
+    rv = reductor(4)
+TypeError: cannot pickle '_io.BufferedRandom' object
+ERROR 2022-06-08 09:06:59,911 basehttp 161 "POST /books/ HTTP/1.1" 500 157363
+INFO 2022-06-08 09:09:24,135 autoreload 251 D:\django project\Elibrary\apps\books\views.py changed, reloading.
+INFO 2022-06-08 09:09:25,033 autoreload 637 Watching for file changes with StatReloader
+ERROR 2022-06-08 09:09:30,747 log 224 Internal Server Error: /books/
+Traceback (most recent call last):
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\django project\Elibrary\apps\books\views.py", line 44, in post
+    temp = copy.deepcopy(data)
+  File "D:\anaconda3\envs\django_new\lib\copy.py", line 153, in deepcopy
+    y = copier(memo)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\http\request.py", line 532, in __deepcopy__
+    result.setlist(copy.deepcopy(key, memo), copy.deepcopy(value, memo))
+  File "D:\anaconda3\envs\django_new\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "D:\anaconda3\envs\django_new\lib\copy.py", line 205, in _deepcopy_list
+    append(deepcopy(a, memo))
+  File "D:\anaconda3\envs\django_new\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "D:\anaconda3\envs\django_new\lib\copy.py", line 270, in _reconstruct
+    state = deepcopy(state, memo)
+  File "D:\anaconda3\envs\django_new\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "D:\anaconda3\envs\django_new\lib\copy.py", line 230, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "D:\anaconda3\envs\django_new\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "D:\anaconda3\envs\django_new\lib\copy.py", line 270, in _reconstruct
+    state = deepcopy(state, memo)
+  File "D:\anaconda3\envs\django_new\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "D:\anaconda3\envs\django_new\lib\copy.py", line 230, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "D:\anaconda3\envs\django_new\lib\copy.py", line 161, in deepcopy
+    rv = reductor(4)
+TypeError: cannot pickle '_io.BufferedRandom' object
+ERROR 2022-06-08 09:09:30,748 basehttp 161 "POST /books/ HTTP/1.1" 500 158895
+INFO 2022-06-08 09:10:03,825 autoreload 251 D:\django project\Elibrary\apps\books\views.py changed, reloading.
+INFO 2022-06-08 09:10:04,726 autoreload 637 Watching for file changes with StatReloader
+ERROR 2022-06-08 09:10:10,941 log 224 Internal Server Error: /books/
+Traceback (most recent call last):
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\django project\Elibrary\apps\books\views.py", line 46, in post
+    for key, value in data.items():
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\utils\datastructures.py", line 176, in items
+    for key in self:
+RuntimeError: dictionary changed size during iteration
+ERROR 2022-06-08 09:10:10,942 basehttp 161 "POST /books/ HTTP/1.1" 500 97413
+INFO 2022-06-08 09:11:54,045 autoreload 251 D:\django project\Elibrary\apps\books\views.py changed, reloading.
+INFO 2022-06-08 09:11:54,925 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-06-08 09:11:57,993 basehttp 161 "POST /books/ HTTP/1.1" 200 25
+INFO 2022-06-08 09:12:08,868 autoreload 251 D:\django project\Elibrary\apps\books\views.py changed, reloading.
+INFO 2022-06-08 09:12:09,774 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-06-08 09:12:35,796 basehttp 161 "POST /books/ HTTP/1.1" 200 25
+INFO 2022-06-08 09:12:42,254 basehttp 161 "POST /books/ HTTP/1.1" 200 25
+INFO 2022-06-08 09:13:29,406 basehttp 161 "GET /posthistory/ HTTP/1.1" 200 740
+INFO 2022-06-08 09:13:49,252 basehttp 161 "GET /posthistory/?page=1&pagesize=1 HTTP/1.1" 200 740
+INFO 2022-06-08 09:14:05,925 basehttp 161 "GET /posthistory/?page=1&page_size=1 HTTP/1.1" 200 388
+INFO 2022-06-08 09:14:21,095 basehttp 161 "POST /books/ HTTP/1.1" 200 25
+INFO 2022-06-08 09:14:23,694 basehttp 161 "GET /posthistory/?page=1&page_size=1 HTTP/1.1" 200 388
+INFO 2022-06-08 09:14:30,597 basehttp 161 "GET /posthistory/?page=1&page_size=2 HTTP/1.1" 200 739
+INFO 2022-06-08 09:14:40,405 basehttp 161 "GET /posthistory/?page=2&page_size=2 HTTP/1.1" 200 395
+INFO 2022-06-08 09:16:24,857 basehttp 161 "GET /book_get/1/download/ HTTP/1.1" 200 6660040
+INFO 2022-06-08 09:16:53,977 basehttp 161 "GET /book_get/1/download/ HTTP/1.1" 200 6660040
+INFO 2022-06-08 09:18:26,779 basehttp 161 "GET /downloads/ HTTP/1.1" 200 850
+INFO 2022-06-08 09:18:43,210 basehttp 161 "GET /downloads/?page=1&page_size=1 HTTP/1.1" 200 446
+INFO 2022-06-08 09:18:54,303 basehttp 161 "GET /downloads/?page=1&page_size=2 HTTP/1.1" 200 849
+INFO 2022-06-08 09:19:00,775 basehttp 161 "GET /downloads/?page=1&page_size=10 HTTP/1.1" 200 850
+INFO 2022-06-08 09:19:10,796 basehttp 161 "GET /downloads/?page=1&page_size=1 HTTP/1.1" 200 446
+INFO 2022-06-08 09:20:56,187 autoreload 251 D:\django project\Elibrary\apps\user\views.py changed, reloading.
+INFO 2022-06-08 09:20:57,309 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-06-08 09:20:59,731 basehttp 161 "GET /downloads/?page=1&page_size=1 HTTP/1.1" 200 446
+INFO 2022-06-08 09:21:04,574 basehttp 161 "GET /downloads/?page=1&page_size=10 HTTP/1.1" 200 850
+INFO 2022-06-08 09:22:06,259 basehttp 161 "GET /collection/1/ HTTP/1.1" 200 31
+INFO 2022-06-08 09:22:10,499 basehttp 161 "GET /collection/2/ HTTP/1.1" 200 23
+INFO 2022-06-08 09:22:14,068 basehttp 161 "GET /collection/3/ HTTP/1.1" 200 23
+INFO 2022-06-08 09:22:17,670 basehttp 161 "GET /collection/4/ HTTP/1.1" 200 23
+INFO 2022-06-08 09:23:20,866 basehttp 161 "GET /collections/ HTTP/1.1" 200 1593
+INFO 2022-06-08 09:23:35,314 basehttp 161 "GET /collections/ HTTP/1.1" 200 1593
+INFO 2022-06-08 09:24:10,166 basehttp 161 "GET /collections/ HTTP/1.1" 200 1593
+INFO 2022-06-08 09:24:16,309 basehttp 161 "GET /collections/ HTTP/1.1" 200 1593
+INFO 2022-06-08 09:24:48,629 basehttp 161 "GET /collections/?page=1&page_size=2 HTTP/1.1" 200 788
+INFO 2022-06-08 09:24:56,708 basehttp 161 "GET /collections/?page=1&page_size=1 HTTP/1.1" 200 415
+INFO 2022-06-08 09:26:32,860 basehttp 161 "POST /comment/1/?page=1&page_size=1 HTTP/1.1" 200 111
+INFO 2022-06-08 09:26:44,370 basehttp 161 "POST /comment/1/?page=1&page_size=1 HTTP/1.1" 200 105
+INFO 2022-06-08 09:26:54,049 basehttp 161 "POST /comment/1/?page=1&page_size=1 HTTP/1.1" 200 111
+INFO 2022-06-08 09:27:32,167 basehttp 161 "GET /comment/1/ HTTP/1.1" 200 374
+INFO 2022-06-08 09:27:48,526 basehttp 161 "GET /comment/1/?page=1&page_size=2 HTTP/1.1" 200 261
+INFO 2022-06-08 09:28:47,843 basehttp 161 "GET /daily_book/ HTTP/1.1" 200 2869
+INFO 2022-06-08 09:29:00,606 basehttp 161 "GET /daily_book/?page=1&page_size=2 HTTP/1.1" 200 759

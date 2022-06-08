@@ -133,6 +133,7 @@ class GetDownloadsView(APIView):
     def get(self, request):
         user = request.user
         files_id = Download.objects.filter(userid=user)
+        sum = len(files_id)
         data = []
         for i in files_id:
             if (BasicBookInfo(i.fid).data in data):
@@ -150,7 +151,7 @@ class GetDownloadsView(APIView):
             page_size = 10
         page_size = int(page_size)
         return Response(
-            {"data": data, "pageSum": math.ceil(len(data) / page_size), "pagesize": page_size, "sum": len(data)})
+            {"data": data, "pageSum": math.ceil(sum / page_size), "pagesize": page_size, "sum": sum})
 
 
 # 获取收藏记录
@@ -158,6 +159,7 @@ class CollectionView(APIView):
     def get(self, request):
         user = request.user
         files_id = Collection.objects.filter(userid=user)
+        sum = len(files_id)
         data = []
         for i in files_id:
             temp_data = BasicBookInfo(i.fid).data
@@ -174,4 +176,4 @@ class CollectionView(APIView):
             page_size = 10
         page_size = int(page_size)
         return Response(
-            {"data": data, "pageSum": math.ceil(len(data) / page_size), "pagesize": page_size, "sum": len(data)})
+            {"data": data, "pageSum": math.ceil(sum / page_size), "pagesize": page_size, "sum": sum})

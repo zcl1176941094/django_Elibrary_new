@@ -1,3 +1,4 @@
+import copy
 import datetime
 import math
 from functools import cmp_to_key
@@ -31,19 +32,16 @@ class BooksPagination(PageNumberPagination):
 class BookViews(APIView):
     # 上传书籍
     def post(self, request):
-        # userSerializer = UserInfoSerializer(request.user)
-        # username = userSerializer.data["username"]
         request.data["uploader"] = request.user
-        # request.data["uploader"] = username
         count = FileInfo.objects.count()
         count += 1
         request.data["fid"] = count
-        # print(request.data)
         data = request.data
-
+        temp = {}
         for key, value in data.items():
-            if value == "":
-                del data[key]
+            if value != "":
+                temp[key] = value
+        data = temp
         serializer = BookSerializer(data=data)
         serializer.is_valid(raise_exception=True)
         serializer.save()
@@ -54,7 +52,7 @@ class BookViews(APIView):
     def get(self, request):
         user = request.user
         data = FileInfo.objects.filter(uploader=user.username)
-
+        sum = len(data)
         if (len(data) > 0):
             list = []
             for i in data:
@@ -69,7 +67,7 @@ class BookViews(APIView):
             page_size = 10
         page_size = int(page_size)
         return Response(
-            {"data": list, "pageSum": math.ceil(len(data) / page_size), "pagesize": page_size, "sum": len(data)})
+            {"data": list, "pageSum": math.ceil(sum / page_size), "pagesize": page_size, "sum": sum})
 
 
 # 下载书籍
@@ -145,6 +143,7 @@ class CommentView(APIView):
     # 获取书籍的评论
     def get(self, request, pk=None):
         comments = Comment.objects.filter(fid=pk)
+        sum = len(comments)
         if len(comments) > 0:
             list = BookCommentSerializer(comments, many=True).data
 
@@ -162,8 +161,8 @@ class CommentView(APIView):
         page_size = int(page_size)
 
         return Response(
-            {"data": list, "pageSum": math.ceil(len(comments) / page_size), "pagesize": page_size,
-             "sum": len(comments)})
+            {"data": list, "pageSum": math.ceil(sum / page_size), "pagesize": page_size,
+             "sum": sum})
 
     # 对书籍评论
     def post(self, request, pk=None):
@@ -212,9 +211,11 @@ class DailyRecommendView(APIView):
             list = sorted(list, key=cmp_to_key(daily_recommend_sort))
             if len(list) >= 20:
                 list = list[:20]
+            sum = len(list)
             for i in range(len(list)):
                 DailyInfo.objects.create(did=(i + 1), fid=list[i])
                 list[i] = BasicBookInfo(list[i]).data
+
         # 数据库有内容
         else:
             books = DailyInfo.objects.all()
@@ -264,6 +265,7 @@ class BookReportView(APIView):
     # 获取用户相关的处理完成的举报信息
     def get(self, request):
         reported = ReportInfo.objects.filter(imformer=request.user.username, isdealt=True)
+        sum = len(reported)
         list = []
         for i in reported:
             result = i.get_result_display()
@@ -281,8 +283,8 @@ class BookReportView(APIView):
             page_size = 10
         page_size = int(page_size)
         return Response(
-            {"data": list, "pageSum": math.ceil(len(reported) / page_size), "pagesize": page_size,
-             "sum": len(reported)})
+            {"data": list, "pageSum": math.ceil(sum / page_size), "pagesize": page_size,
+             "sum": sum})
 
     # 提交举报信息
     def post(self, request, pk=None):
@@ -307,6 +309,7 @@ class UndoBookReportView(APIView):
     # 查询未处理信息
     def get(self, request):
         reports = ReportInfo.objects.filter(isdealt=False)
+        sum = len(reports)
         list = []
         for i in reports:
             result = i.get_result_display()
@@ -326,7 +329,7 @@ class UndoBookReportView(APIView):
             page_size = 10
         page_size = int(page_size)
         return Response(
-            {"data": list, "pageSum": math.ceil(len(reports) / page_size), "pagesize": page_size, "sum": len(reports)})
+            {"data": list, "pageSum": math.ceil(sum / page_size), "pagesize": page_size, "sum": sum})
 
     # 处理举报信息
     def post(self, request, pk=None):
@@ -341,6 +344,7 @@ class DoneBookReportView(APIView):
     # 查询已处理信息
     def get(self, request):
         reports = ReportInfo.objects.filter(isdealt=True)
+        sum = len(reports)
         list = []
         for i in reports:
             # print(BookReportSerializer(i).data)
@@ -360,7 +364,7 @@ class DoneBookReportView(APIView):
             page_size = 10
         page_size = int(page_size)
         return Response(
-            {"data": list, "pageSum": math.ceil(len(reports) / page_size), "pagesize": page_size, "sum": len(reports)})
+            {"data": list, "pageSum": math.ceil(sum / page_size), "pagesize": page_size, "sum": sum})
 
 
 # 获取被举报违规信息
@@ -369,6 +373,7 @@ class ReportedView(APIView):
         user = request.user
         # print(type(user))
         reports = ReportInfo.objects.filter(reported=user.username, result=1)
+        sum = len(reports)
         list = []
         for i in reports:
             result = i.get_result_display()
@@ -386,7 +391,7 @@ class ReportedView(APIView):
             page_size = 10
         page_size = int(page_size)
         return Response(
-            {"data": list, "pageSum": math.ceil(len(reports) / page_size), "pagesize": page_size, "sum": len(reports)})
+            {"data": list, "pageSum": math.ceil(sum / page_size), "pagesize": page_size, "sum": sum})
 
 
 def book_recommend_sort(x, y):
@@ -478,8 +483,8 @@ class SearchBookView(APIView):
                     temp[i]["relevancy"] = relevancy
             list = temp
             list = sorted(list, key=lambda x: x["relevancy"], reverse=True)
-        # 数据分页
         sum = len(list)
+        # 数据分页
         page_obj = BooksPagination()
         list = page_obj.paginate_queryset(list, request=request, view=self)
 
