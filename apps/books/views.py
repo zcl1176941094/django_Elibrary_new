@@ -126,15 +126,18 @@ class CancelCollectionView(APIView):
 class BanBookView(APIView):
     def get(self, request, pk=None):
         # 修改书籍是否封禁
-        FileInfo.objects.filter(fid=pk).update(isvalid=False)
         file = FileInfo.objects.get(fid=pk)
-        userid = file.uploader
-        user = UserInfo.objects.get(username=userid)
-        violation = user.violation + 1
-        # 修改用户违规次数
-        UserInfo.objects.filter(username=userid).update(violation=violation)
-
-        return Response({"msg": "封禁成功！"})
+        if file.isvalid == True:
+            FileInfo.objects.filter(fid=pk).update(isvalid=False)
+            file = FileInfo.objects.get(fid=pk)
+            userid = file.uploader
+            user = UserInfo.objects.get(username=userid)
+            violation = user.violation + 1
+            # 修改用户违规次数
+            UserInfo.objects.filter(username=userid).update(violation=violation)
+            return Response({"msg": "封禁成功！"})
+        else:
+            return Response({"msg": "该书已被封禁"})
 
 
 # 书籍评论
