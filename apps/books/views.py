@@ -1,6 +1,7 @@
 import copy
 import datetime
 import math
+import uuid
 from functools import cmp_to_key
 
 from django.http import FileResponse
@@ -14,6 +15,9 @@ from user.models import FileInfo, UserInfo, Download, Collection, Comment, Daily
 from books.serializers import BookSerializer, BookCommentSerializer, BasicBookInfo, BookReportSerializer
 from user.serializers import UserInfoSerializer
 
+import os
+import fitz
+
 
 # 分页函数
 class BooksPagination(PageNumberPagination):
@@ -26,6 +30,62 @@ class BooksPagination(PageNumberPagination):
     # 每页最大显示条数
     max_page_size = 15
 
+
+# 读取pdf第一页
+def analysis(file_path, save_path, num):
+    # 资源列表
+    file_array = []
+    if os.path.isdir(file_path):
+        # 目录循环压入
+        file_count = get_path_file(file_path)
+        for v in file_count:
+            file_array.append(v)
+    else:
+        # 单文件，单次调用
+        file_array.append(file_path)
+
+    # 判断为空情况
+    if not file_array:
+        print("此目录下无文件")
+    # 执行解析
+    file_count_num = len(file_array)
+    # print("程序运行中，共计%s个文件" % file_count_num)
+    for v in file_array:
+        # print("文件路径：%s" % v)
+        # 获取文件名称及类型
+        file_name = os.path.basename(v)
+        # print("文件信息：%s" % file_name)
+        if '.pdf' not in file_name:
+            print("此文件非PDF文件")
+        #  打开PDF文件，生成一个对象
+        doc = fitz.open(v)
+        # 总页数
+        count_page = doc.pageCount
+        # print("文件共计：%s页" % count_page)
+        if count_page > 1:
+            page = doc[num]
+            rotate = int(0)
+            # 每个尺寸的缩放系数为2，这将为我们生成分辨率提高四倍的图像。
+            zoom_x = 2.0
+            zoom_y = 2.0
+            trans = fitz.Matrix(zoom_x, zoom_y).preRotate(rotate)
+            pm = page.getPixmap(matrix=trans, alpha=False)
+            # 保存路径
+            p_1 = v.replace(file_path, save_path)
+            p_2 = p_1.replace(file_name, '')
+            pm.writePNG(p_2)
+            print("运行完成")
+        else:
+            print("此文档无内容，跳出")
+            continue
+
+def get_path_file(files_path):
+    data = []
+    for root, dirs, files in os.walk(files_path, topdown=False):
+        for name in files:
+            f_p = os.path.join(root, name).replace("\\", "/")
+            data.append(f_p)
+    return data
 
 # Create your views here.
 # 上传书籍
@@ -46,6 +106,16 @@ class BookViews(APIView):
         serializer.is_valid(raise_exception=True)
         serializer.save()
 
+        fid = data["fid"]
+        file = FileInfo.objects.get(fid=fid)
+        file_path = file.file.path
+        username = file.uploader
+        file_photo = 'img2/' + str(username) + '/' + '{}.{}'.format(uuid.uuid4().hex[:8],"png")
+        FileInfo.objects.filter(fid=fid).update(file_photo=file_photo)
+        file_photo = "media/"+file_photo
+        if not os.path.exists('media/img2/' + str(username) + '/'):
+            os.mkdir('media/img2/' + str(username) + '/')
+        analysis(file_path,file_photo,0)
         return Response({'msg': '上传成功！'})
 
     # 获取用户上传书籍

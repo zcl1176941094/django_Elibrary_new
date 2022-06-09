@@ -11231,3 +11231,140 @@ INFO 2022-06-09 08:53:06,344 autoreload 251 D:\django project\Elibrary\apps\book
 INFO 2022-06-09 08:53:07,243 autoreload 637 Watching for file changes with StatReloader
 INFO 2022-06-09 08:53:10,287 basehttp 161 "GET /ban_book/1/ HTTP/1.1" 200 28
 INFO 2022-06-09 08:53:14,606 basehttp 161 "GET /ban_book/2/ HTTP/1.1" 200 25
+INFO 2022-06-09 09:10:59,273 basehttp 161 "GET /search_books/ HTTP/1.1" 200 2747
+INFO 2022-06-09 09:11:11,156 basehttp 161 "GET /search_books/ HTTP/1.1" 200 45
+INFO 2022-06-09 09:11:20,004 basehttp 161 "GET /search_books/ HTTP/1.1" 200 2859
+INFO 2022-06-09 09:11:45,796 basehttp 161 "GET /search_books/ HTTP/1.1" 200 45
+INFO 2022-06-09 09:11:52,697 basehttp 161 "GET /search_books/ HTTP/1.1" 200 45
+INFO 2022-06-09 09:11:55,682 basehttp 161 "GET /search_books/ HTTP/1.1" 200 2747
+INFO 2022-06-09 09:12:10,410 basehttp 161 "GET /search_books/ HTTP/1.1" 200 45
+INFO 2022-06-09 09:12:14,375 basehttp 161 "GET /search_books/ HTTP/1.1" 200 45
+INFO 2022-06-09 09:13:09,244 basehttp 161 "GET /search_books/ HTTP/1.1" 200 45
+INFO 2022-06-09 09:14:18,348 basehttp 161 "GET /search_books/ HTTP/1.1" 200 2747
+INFO 2022-06-09 09:14:42,923 basehttp 161 "GET /search_books/ HTTP/1.1" 200 1140
+INFO 2022-06-09 09:15:14,658 basehttp 161 "GET /search_books/ HTTP/1.1" 200 2852
+INFO 2022-06-09 09:16:31,169 basehttp 161 "POST /books/ HTTP/1.1" 200 25
+INFO 2022-06-09 09:16:42,212 basehttp 161 "GET /search_books/ HTTP/1.1" 200 431
+INFO 2022-06-09 10:31:17,096 autoreload 251 D:\django project\Elibrary\apps\books\views.py changed, reloading.
+INFO 2022-06-09 10:31:18,047 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-06-09 10:31:26,587 autoreload 251 D:\django project\Elibrary\apps\books\views.py changed, reloading.
+INFO 2022-06-09 10:31:27,468 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-06-09 10:38:06,202 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-06-09 10:38:12,858 autoreload 251 D:\django project\Elibrary\apps\books\views.py changed, reloading.
+INFO 2022-06-09 10:38:13,744 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-06-09 10:38:17,707 basehttp 161 "GET /search_books/ HTTP/1.1" 200 431
+INFO 2022-06-09 11:05:33,637 autoreload 251 D:\django project\Elibrary\apps\books\views.py changed, reloading.
+INFO 2022-06-09 11:05:34,563 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-06-09 11:06:07,478 autoreload 251 D:\django project\Elibrary\apps\books\views.py changed, reloading.
+INFO 2022-06-09 11:06:08,344 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-06-09 11:10:17,702 autoreload 251 D:\django project\Elibrary\apps\books\views.py changed, reloading.
+INFO 2022-06-09 11:10:18,615 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-06-09 11:21:53,624 autoreload 251 D:\django project\Elibrary\apps\books\views.py changed, reloading.
+INFO 2022-06-09 11:21:54,626 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-06-09 11:24:50,663 autoreload 251 D:\django project\Elibrary\apps\books\views.py changed, reloading.
+INFO 2022-06-09 11:24:51,599 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-06-09 11:27:13,873 autoreload 251 D:\django project\Elibrary\apps\books\views.py changed, reloading.
+INFO 2022-06-09 11:27:14,823 autoreload 637 Watching for file changes with StatReloader
+ERROR 2022-06-09 11:28:19,159 log 224 Internal Server Error: /books/
+Traceback (most recent call last):
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\django project\Elibrary\apps\books\views.py", line 112, in post
+    fid = serializer.fid
+AttributeError: 'BookSerializer' object has no attribute 'fid'
+ERROR 2022-06-09 11:28:19,162 basehttp 161 "POST /books/ HTTP/1.1" 500 96469
+INFO 2022-06-09 11:29:56,814 autoreload 251 D:\django project\Elibrary\apps\books\views.py changed, reloading.
+INFO 2022-06-09 11:29:57,709 autoreload 637 Watching for file changes with StatReloader
+ERROR 2022-06-09 11:30:01,630 log 224 Internal Server Error: /books/
+Traceback (most recent call last):
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\django project\Elibrary\apps\books\views.py", line 121, in post
+    analysis(file_path,file_photo,0)
+  File "D:\django project\Elibrary\apps\books\views.py", line 38, in analysis
+    if os.path.isdir(file_path):
+  File "D:\anaconda3\envs\django_new\lib\genericpath.py", line 42, in isdir
+    st = os.stat(s)
+TypeError: stat: path should be string, bytes, os.PathLike or integer, not FieldFile
+ERROR 2022-06-09 11:30:01,632 basehttp 161 "POST /books/ HTTP/1.1" 500 104937
+INFO 2022-06-09 11:30:27,264 autoreload 251 D:\django project\Elibrary\apps\books\views.py changed, reloading.
+INFO 2022-06-09 11:30:28,140 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-06-09 11:30:30,309 basehttp 161 "POST /books/ HTTP/1.1" 200 25
+INFO 2022-06-09 11:31:31,332 autoreload 251 D:\django project\Elibrary\apps\books\views.py changed, reloading.
+INFO 2022-06-09 11:31:32,210 autoreload 637 Watching for file changes with StatReloader
+ERROR 2022-06-09 11:31:37,533 log 224 Internal Server Error: /books/
+Traceback (most recent call last):
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\django project\Elibrary\apps\books\views.py", line 116, in post
+    file_photo = 'img2/' + str(username) + '/' + '{}.{}'.format(uuid.uuid4().hex[:8])
+IndexError: Replacement index 1 out of range for positional args tuple
+ERROR 2022-06-09 11:31:37,535 basehttp 161 "POST /books/ HTTP/1.1" 500 97334
+INFO 2022-06-09 11:31:47,292 autoreload 251 D:\django project\Elibrary\apps\books\views.py changed, reloading.
+INFO 2022-06-09 11:31:48,220 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-06-09 11:32:03,805 basehttp 161 "POST /books/ HTTP/1.1" 200 25
+INFO 2022-06-09 11:34:00,130 autoreload 251 D:\django project\Elibrary\apps\books\views.py changed, reloading.
+INFO 2022-06-09 11:34:01,039 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-06-09 11:34:04,168 basehttp 161 "POST /books/ HTTP/1.1" 200 25
+INFO 2022-06-09 11:34:32,854 autoreload 251 D:\django project\Elibrary\apps\books\views.py changed, reloading.
+INFO 2022-06-09 11:34:33,711 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-06-09 11:34:35,215 basehttp 161 "POST /books/ HTTP/1.1" 200 25
+INFO 2022-06-09 11:35:21,269 autoreload 251 D:\django project\Elibrary\apps\books\views.py changed, reloading.
+INFO 2022-06-09 11:35:22,180 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-06-09 11:35:25,605 basehttp 161 "POST /books/ HTTP/1.1" 200 25
+INFO 2022-06-09 11:35:48,664 autoreload 251 D:\django project\Elibrary\apps\books\views.py changed, reloading.
+INFO 2022-06-09 11:35:49,534 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-06-09 11:35:51,010 basehttp 161 "POST /books/ HTTP/1.1" 200 25
+INFO 2022-06-09 11:37:14,358 autoreload 251 D:\django project\Elibrary\apps\books\views.py changed, reloading.
+INFO 2022-06-09 11:37:15,271 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-06-09 11:39:44,157 autoreload 251 D:\django project\Elibrary\apps\user\views.py changed, reloading.
+INFO 2022-06-09 11:39:45,129 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-06-09 11:41:48,462 basehttp 161 "POST /userphoto/ HTTP/1.1" 200 12
+INFO 2022-06-09 11:43:39,043 basehttp 161 "GET /book_get/20/ HTTP/1.1" 200 430
+INFO 2022-06-09 11:44:40,806 autoreload 251 D:\django project\Elibrary\apps\user\views.py changed, reloading.
+INFO 2022-06-09 11:44:41,741 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-06-09 11:46:49,893 autoreload 251 D:\django project\Elibrary\apps\user\views.py changed, reloading.
+INFO 2022-06-09 11:46:50,873 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-06-09 11:47:09,944 basehttp 161 "POST /books/ HTTP/1.1" 200 25

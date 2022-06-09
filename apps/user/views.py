@@ -23,12 +23,10 @@ class RegisterViews(APIView):
     permission_classes = []
 
     def post(self, request):
-        # print(request.data)
         serializer = UserRegSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
-        # print(serializer.validated_data)
         user = serializer.save()
-        #
+
         # drf-jwt生成
         jwt_payload_handler = api_settings.JWT_PAYLOAD_HANDLER
         jwt_encode_handler = api_settings.JWT_ENCODE_HANDLER
@@ -61,7 +59,6 @@ class UserInfoViews(APIView):
         user = request.user
         serializer = UserInfoSerializer(user)
         data = serializer.data
-        # print(data)
         if request.data.get("nickname"):
             data["nickname"] = request.data["nickname"]
         serializer = UserInfoSerializer(user, data=data)
@@ -78,11 +75,9 @@ class UserPhotoView(APIView):
         return Response(data, status=201)
 
     def post(self, request):
-        photo = request.FILES['photo']
+        photo = request.FILES['file']
         username = UserInfoSerializer(request.user).data["username"]
         file_name = 'img1/' + str(username) + '/' + '{}.{}'.format(uuid.uuid4().hex[:8], photo.name.split('.')[-1])
-        # print(file_name)
-        # print(photo.name)
         UserInfo.objects.filter(username=username).update(photo=file_name)
         if not os.path.exists('media/img1/' + str(username) + '/'):
             os.mkdir('media/img1/' + str(username) + '/')
@@ -105,7 +100,6 @@ class CommonUpdateUserView(APIView):
         now = datetime.datetime.now().strftime("%Y-%m-%d")
         now = datetime.datetime.strptime(now, "%Y-%m-%d")
         day = (now - last_longin_time).days
-        # print(now.strftime("%Y-%m-%d"))
         if day == 1:
             data["continuous"] += 1
             data["score"] += 1
