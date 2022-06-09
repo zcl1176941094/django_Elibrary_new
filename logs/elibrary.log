@@ -11227,3 +11227,7 @@ INFO 2022-06-09 08:50:55,470 basehttp 161 "POST /login/ HTTP/1.1" 200 284
 INFO 2022-06-09 08:51:16,813 basehttp 161 "GET /ban_book/1/ HTTP/1.1" 200 25
 INFO 2022-06-09 08:51:18,089 basehttp 161 "GET /ban_book/1/ HTTP/1.1" 200 28
 INFO 2022-06-09 08:51:22,448 basehttp 161 "GET /ban_book/1/ HTTP/1.1" 200 28
+INFO 2022-06-09 08:53:06,344 autoreload 251 D:\django project\Elibrary\apps\books\views.py changed, reloading.
+INFO 2022-06-09 08:53:07,243 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-06-09 08:53:10,287 basehttp 161 "GET /ban_book/1/ HTTP/1.1" 200 28
+INFO 2022-06-09 08:53:14,606 basehttp 161 "GET /ban_book/2/ HTTP/1.1" 200 25

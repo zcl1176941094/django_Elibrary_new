@@ -129,7 +129,6 @@ class BanBookView(APIView):
         file = FileInfo.objects.get(fid=pk)
         if file.isvalid == True:
             FileInfo.objects.filter(fid=pk).update(isvalid=False)
-            file = FileInfo.objects.get(fid=pk)
             userid = file.uploader
             user = UserInfo.objects.get(username=userid)
             violation = user.violation + 1
