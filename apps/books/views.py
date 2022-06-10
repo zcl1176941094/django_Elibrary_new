@@ -129,7 +129,7 @@ class BookViews(APIView):
             list = []
             for i in data:
                 list.append(BookSerializer(i).data)
-
+            list.reverse()
             page_obj = BooksPagination()
             list = page_obj.paginate_queryset(list, request=request, view=self)
         else:

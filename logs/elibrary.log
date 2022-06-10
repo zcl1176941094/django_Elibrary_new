@@ -11535,3 +11535,8 @@ INFO 2022-06-10 12:18:33,217 autoreload 251 D:\django project\Elibrary\apps\book
 INFO 2022-06-10 12:18:34,007 autoreload 637 Watching for file changes with StatReloader
 INFO 2022-06-10 12:18:43,508 basehttp 161 "POST /manage_report/1/ HTTP/1.1" 200 25
 INFO 2022-06-10 12:18:47,127 basehttp 161 "GET /search_msg/?page=1&page_size=4 HTTP/1.1" 200 269
+INFO 2022-06-10 12:29:10,448 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-06-10 12:29:13,721 basehttp 161 "POST /manage_report/1/ HTTP/1.1" 200 25
+INFO 2022-06-10 12:30:58,244 basehttp 161 "GET /search_msg/?page=1&page_size=4 HTTP/1.1" 200 269
+INFO 2022-06-10 12:31:08,177 basehttp 161 "GET /search_undo_msg/?page=1&page_size=4 HTTP/1.1" 200 260
+INFO 2022-06-10 12:33:19,221 basehttp 161 "GET /search_msg/?page=1&page_size=4 HTTP/1.1" 200 269
