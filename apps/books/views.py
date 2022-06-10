@@ -79,6 +79,7 @@ def analysis(file_path, save_path, num):
             print("此文档无内容，跳出")
             continue
 
+
 def get_path_file(files_path):
     data = []
     for root, dirs, files in os.walk(files_path, topdown=False):
@@ -86,6 +87,7 @@ def get_path_file(files_path):
             f_p = os.path.join(root, name).replace("\\", "/")
             data.append(f_p)
     return data
+
 
 # Create your views here.
 # 上传书籍
@@ -110,12 +112,12 @@ class BookViews(APIView):
         file = FileInfo.objects.get(fid=fid)
         file_path = file.file.path
         username = file.uploader
-        file_photo = 'img2/' + str(username) + '/' + '{}.{}'.format(uuid.uuid4().hex[:8],"png")
+        file_photo = 'img2/' + str(username) + '/' + '{}.{}'.format(uuid.uuid4().hex[:8], "png")
         FileInfo.objects.filter(fid=fid).update(file_photo=file_photo)
-        file_photo = "media/"+file_photo
+        file_photo = "media/" + file_photo
         if not os.path.exists('media/img2/' + str(username) + '/'):
             os.mkdir('media/img2/' + str(username) + '/')
-        analysis(file_path,file_photo,0)
+        analysis(file_path, file_photo, 0)
         return Response({'msg': '上传成功！'})
 
     # 获取用户上传书籍
@@ -286,7 +288,7 @@ class DailyRecommendView(APIView):
             sum = len(list)
             for i in range(len(list)):
                 DailyInfo.objects.create(did=(i + 1), fid=list[i])
-                list[i] = BasicBookInfo(list[i]).data
+                list[i] = BookSerializer(list[i]).data
 
         # 数据库有内容
         else:
@@ -302,7 +304,7 @@ class DailyRecommendView(APIView):
                     list = []
                     for i in books:
                         book = FileInfo.objects.get(fid=i.fid.fid)
-                        list.append(BasicBookInfo(book).data)
+                        list.append(BookSerializer(book).data)
                     break
                 # 数据库内的内容是旧的内容
                 else:
@@ -318,7 +320,7 @@ class DailyRecommendView(APIView):
                     sum = len(list)
                     for i in range(len(list)):
                         DailyInfo.objects.create(did=(i + 1), fid=list[i])
-                        list[i] = BasicBookInfo(list[i]).data
+                        list[i] = BookSerializer(list[i]).data
                     break
         # 数据分页
         page_obj = BooksPagination()
@@ -419,7 +421,6 @@ class DoneBookReportView(APIView):
         sum = len(reports)
         list = []
         for i in reports:
-            # print(BookReportSerializer(i).data)
             result = i.get_result_display()
             serializer = BookReportSerializer(i)
             data = serializer.data
@@ -488,9 +489,9 @@ class SearchBookView(APIView):
     def get(self, request):
         queryset = FileInfo.objects.filter(isvalid=True)
         # 筛选
-        screen = request.data["screen"]
+        screen = request.GET.get("screen", "")
         # 搜索框
-        search = request.data["search"]
+        search = request.GET.get("search", "")
         # global list
         list = []
 

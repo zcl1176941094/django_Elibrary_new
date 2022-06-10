@@ -11368,3 +11368,52 @@ INFO 2022-06-09 11:44:41,741 autoreload 637 Watching for file changes with StatR
 INFO 2022-06-09 11:46:49,893 autoreload 251 D:\django project\Elibrary\apps\user\views.py changed, reloading.
 INFO 2022-06-09 11:46:50,873 autoreload 637 Watching for file changes with StatReloader
 INFO 2022-06-09 11:47:09,944 basehttp 161 "POST /books/ HTTP/1.1" 200 25
+INFO 2022-06-10 10:09:36,059 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-06-10 10:09:43,517 basehttp 161 "POST /login/ HTTP/1.1" 200 284
+INFO 2022-06-10 10:11:01,173 basehttp 161 "GET /search_undo_msg/ HTTP/1.1" 200 687
+INFO 2022-06-10 10:11:21,558 basehttp 161 "GET /search_undo_msg/?page=1&page_size=12 HTTP/1.1" 200 687
+INFO 2022-06-10 10:11:46,085 basehttp 161 "GET /search_undo_msg/?page=1&page_size=1 HTTP/1.1" 200 270
+INFO 2022-06-10 10:19:30,429 autoreload 251 D:\django project\Elibrary\apps\books\views.py changed, reloading.
+INFO 2022-06-10 10:19:31,517 autoreload 637 Watching for file changes with StatReloader
+ERROR 2022-06-10 10:20:10,316 log 224 Internal Server Error: /search_books/
+Traceback (most recent call last):
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\anaconda3\envs\django_new\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\django project\Elibrary\apps\books\views.py", line 501, in get
+    if len(screen) == 0 and len(search) == 0:
+TypeError: object of type 'NoneType' has no len()
+ERROR 2022-06-10 10:20:10,319 basehttp 161 "GET /search_books/ HTTP/1.1" 500 100643
+INFO 2022-06-10 10:20:42,835 autoreload 251 D:\django project\Elibrary\apps\books\views.py changed, reloading.
+INFO 2022-06-10 10:20:43,876 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-06-10 10:20:47,959 basehttp 161 "GET /search_books/ HTTP/1.1" 200 3881
+INFO 2022-06-10 10:21:35,416 autoreload 251 D:\django project\Elibrary\apps\books\views.py changed, reloading.
+INFO 2022-06-10 10:21:36,414 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-06-10 10:21:38,428 basehttp 161 "GET /search_books/ HTTP/1.1" 200 3881
+INFO 2022-06-10 10:22:19,250 autoreload 251 D:\django project\Elibrary\apps\books\views.py changed, reloading.
+INFO 2022-06-10 10:22:20,273 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-06-10 10:22:22,565 basehttp 161 "GET /search_books/ HTTP/1.1" 200 3881
+INFO 2022-06-10 10:23:27,596 autoreload 251 D:\django project\Elibrary\apps\books\views.py changed, reloading.
+INFO 2022-06-10 10:23:28,600 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-06-10 10:23:30,859 basehttp 161 "GET /search_books/ HTTP/1.1" 200 3881
+INFO 2022-06-10 10:23:47,074 autoreload 251 D:\django project\Elibrary\apps\books\views.py changed, reloading.
+INFO 2022-06-10 10:23:48,081 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-06-10 10:25:57,055 autoreload 251 D:\django project\Elibrary\apps\books\views.py changed, reloading.
+INFO 2022-06-10 10:25:58,033 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-06-10 10:37:55,318 autoreload 251 D:\django project\Elibrary\apps\books\views.py changed, reloading.
+INFO 2022-06-10 10:37:56,519 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-06-10 10:38:03,817 basehttp 161 "GET /search_msg/?page=1&page_size=1 HTTP/1.1" 200 245
+INFO 2022-06-10 10:38:18,046 basehttp 161 "GET /search_msg/?page=1&page_size=4 HTTP/1.1" 200 899
