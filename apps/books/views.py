@@ -336,9 +336,9 @@ class DailyRecommendView(APIView):
 
 # 书籍举报类
 class BookReportView(APIView):
-    # 获取用户相关的处理完成的举报信息
+    # 获取用户相关的举报信息
     def get(self, request):
-        reported = ReportInfo.objects.filter(imformer=request.user.username, isdealt=True)
+        reported = ReportInfo.objects.filter(imformer=request.user.username)
         sum = len(reported)
         list = []
         for i in reported:

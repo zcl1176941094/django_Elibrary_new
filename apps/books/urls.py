@@ -13,7 +13,7 @@ urlpatterns = [
     re_path('report/(?P<pk>[^/.]+)/', views.BookReportView.as_view()),  # 提交书籍举报信息
     path('search_undo_msg/', views.UndoBookReportView.as_view()),  # 获取未处理信息
     path('search_msg/', views.DoneBookReportView.as_view()),  # 获取已处理信息
-    path('get_report/', views.BookReportView.as_view()),  # 获取用户举报的已处理信息
+    path('get_report/', views.BookReportView.as_view()),  # 获取用户举报的信息
     path('get_reported/', views.ReportedView.as_view()),  # 获取被举报违规的信息
     path('search_books/', views.SearchBookView.as_view()),  # 查询书籍
 ]
