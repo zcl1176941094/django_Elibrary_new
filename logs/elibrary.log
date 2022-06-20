@@ -11540,3 +11540,13 @@ INFO 2022-06-10 12:29:13,721 basehttp 161 "POST /manage_report/1/ HTTP/1.1" 200 
 INFO 2022-06-10 12:30:58,244 basehttp 161 "GET /search_msg/?page=1&page_size=4 HTTP/1.1" 200 269
 INFO 2022-06-10 12:31:08,177 basehttp 161 "GET /search_undo_msg/?page=1&page_size=4 HTTP/1.1" 200 260
 INFO 2022-06-10 12:33:19,221 basehttp 161 "GET /search_msg/?page=1&page_size=4 HTTP/1.1" 200 269
+INFO 2022-06-12 21:58:51,068 autoreload 637 Watching for file changes with StatReloader
+INFO 2022-06-12 21:58:54,556 basehttp 161 "POST /login/ HTTP/1.1" 200 284
+INFO 2022-06-12 21:59:55,335 basehttp 161 "POST /books/ HTTP/1.1" 200 25
+WARNING 2022-06-12 22:02:56,126 log 224 Method Not Allowed: /ban_book/22/
+WARNING 2022-06-12 22:02:56,127 basehttp 161 "POST /ban_book/22/ HTTP/1.1" 405 41
+INFO 2022-06-12 22:03:00,227 basehttp 161 "GET /ban_book/22/ HTTP/1.1" 200 25
+INFO 2022-06-12 22:03:42,259 basehttp 161 "GET /ban_book/18/ HTTP/1.1" 200 25
+INFO 2022-06-12 22:03:52,466 basehttp 161 "GET /ban_book/10/ HTTP/1.1" 200 25
+INFO 2022-06-12 22:03:59,574 basehttp 161 "GET /ban_book/1/ HTTP/1.1" 200 28
+INFO 2022-06-12 22:04:03,879 basehttp 161 "GET /ban_book/5/ HTTP/1.1" 200 25

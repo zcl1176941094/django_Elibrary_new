@@ -21,7 +21,6 @@ import datetime
 class RegisterViews(APIView):
     authentication_classes = []
     permission_classes = []
-
     def post(self, request):
         serializer = UserRegSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)

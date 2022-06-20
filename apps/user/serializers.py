@@ -1,9 +1,6 @@
 from rest_framework import serializers
 from django.contrib.auth import get_user_model
 from rest_framework.validators import UniqueValidator
-from user.models import Download
-from books.serializers import BasicBookInfo
-
 User = get_user_model()
 
 
@@ -12,7 +9,8 @@ class UserRegSerializer(serializers.ModelSerializer):
     username = serializers.CharField(label="用户账户", required=True,
                                      validators=[UniqueValidator(queryset=User.objects.all(),
                                                                  message="用户已经存在")])
-    password = serializers.CharField(style={'input_type': 'password'}, label="用户密码", required=True, write_only=True)
+    password = serializers.CharField(style={'input_type': 'password'}, label="用户密码", required=True,
+                                     write_only=True)
     nickname = serializers.CharField(default="个人账户", label="用户名称", required=False)
 
     def validate(self, attrs):
@@ -48,9 +46,7 @@ class UserRegSerializer(serializers.ModelSerializer):
 class UserInfoSerializer(serializers.Serializer):
     username = serializers.CharField(label="用户账户", required=True)
     nickname = serializers.CharField(max_length=20, label="用户名称")
-
     score = serializers.IntegerField(label="个人积分")
-    # photo = serializers.ImageField(label="个人头像")
     violation = serializers.IntegerField(label="违规次数")
     continuous = serializers.IntegerField(label="连续登入天数")
     login_time = serializers.DateField(label="上次登录时间")
@@ -62,7 +58,6 @@ class UserInfoSerializer(serializers.Serializer):
         instance.nickname = validated_data.get('nickname', instance.nickname)
         instance.violation = validated_data.get('violation', instance.violation)
         instance.login_time = validated_data.get('login_time', instance.login_time)
-        # instance.photo = validated_data("photo", instance.photo)
         instance.save()
         return instance
 
@@ -77,14 +72,3 @@ class UserPhotoSerializer(serializers.Serializer):
     class Meta:
         model = User
         fields = ("photo",)
-
-# # 下载历史序列化器
-# class DownloadHistorySerializer(serializers.Serializer):
-#     # fid = serializers.IntegerField(label="书籍id", required=True)
-#     fid = BasicBookInfo(many=True)
-#     userid = serializers.CharField(label="用户id")
-#     download_time = serializers.DateField(label="下载时间")
-#
-#     class Meta:
-#         model = Download
-#         fields = '__all__'

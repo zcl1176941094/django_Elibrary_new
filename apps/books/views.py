@@ -107,7 +107,6 @@ class BookViews(APIView):
         serializer = BookSerializer(data=data)
         serializer.is_valid(raise_exception=True)
         serializer.save()
-
         fid = data["fid"]
         file = FileInfo.objects.get(fid=fid)
         file_path = file.file.path
@@ -246,8 +245,10 @@ class CommentView(APIView):
         comment_times = file.comment_times + 1
         sum_score = int(data["grade"]) + file.sum_score
         ave_score = sum_score / comment_times
-        FileInfo.objects.filter(fid=pk).update(sum_score=sum_score, ave_score=ave_score, comment_times=comment_times)
-        comment = Comment.objects.create(fid=file, userid=user, grade=data["grade"], evaluation=data["evaluation"])
+        FileInfo.objects.filter(fid=pk).update(sum_score=sum_score, ave_score=ave_score,
+                                               comment_times=comment_times)
+        comment = Comment.objects.create(fid=file, userid=user, grade=data["grade"],
+                                         evaluation=data["evaluation"])
         serializer = BookCommentSerializer(comment)
         data = serializer.data
         return Response(data)
